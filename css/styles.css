@@ -1,0 +1,367 @@
+/* css/styles.css */
+:root {
+    --primary-color: #1a56db;
+    --primary-dark: #1e429f;
+    --secondary-color: #f3f4f6;
+    --text-color: #374151;
+    --text-light: #6b7280;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 8px 0; 
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: 16px;
+}
+
+.phone, .address {
+    display: flex;
+    gap: 16px;
+}
+
+.icon {
+    margin-right: 4px;
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: var(--white);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    /* display: none; */
+    list-style: none;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+    }
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.appointment-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 24px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.appointment-btn .icon {
+    margin-right: 8px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #e6f2ff, #f0f7ff); /*what does to right do?*/
+    padding: 80px 0;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 24px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(26, 86, 219, 0.05);
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-content {
+        flex: 1;
+        text-align: left;
+        padding-right: 40px;
+        margin-bottom: 0;
+    }
+
+    .hero p {
+        margin: 0 0 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+    }
+
+    .hero-image {
+        flex: 1;
+    }
+}
+
+/* Section Header (can be resued for other sections */
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Treatments Section */
+.treatments {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.treatment-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.treatment-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treatment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.treatment-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 24px;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+
+.card-content p {
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+.learn-more {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+    color: var(--primary-dark);
+}
+
+.learn-more::after {
+    content: "→";
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+.learn-more:hover::after {
+    transform: translateX(4px);
+}
+
+@media (min-width: 768px) {
+    .treatment-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .treatment-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.feature {
+    background-color: var(--white);
+    padding: 34px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.feature h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+
+.feature p {
+    color: var(--text-light);
+}
+
+/* Make features responsive */
+@media (min-width: 640px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .features {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
