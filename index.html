@@ -7,6 +7,7 @@
     <title>Lane Orthodontics</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- HEADER SECTION -->
@@ -15,12 +16,13 @@
             <div class="container">
                 <div class="contact-info">
                     <div class="phone">
-                        <span class="icon">📞</span>
+                        <span class="icon"><i class="fa-solid fa-phone"></i></span>
                         <span>(909) 799-1825</span>
                     </div>
                     <div class="address">
-                        <span class="icon">📍</span>
-                        <span>Loma Linda, CA</span>
+                        <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                        <span>73-899 Highway 111<br>
+                            Palm Desert, CA 92260</span>
                     </div>
                 </div>
             </div>
@@ -29,31 +31,40 @@
         <nav class="main-nav">
             <div class="container">
                 <div class="logo">Lane Orthodontics</div>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Before & After</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <button class="appointment-btn">
-                    <span class="icon">📅</span>
-                    Book Appointment
+
+                 <!-- Hamburger menu button -->
+                <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </button>
+
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <button class="appointment-btn">
+                        <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
+                        Book Appointment
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
     
     <!-- HERO SECTION-->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container hero-container">
             <div class="hero-content">
                 <h1>Your Perfect Smile Begins Here</h1>
                 <p>State-of-the-art orthodontic care for patients of all ages. We're committed to creating beautiful, healthy smiles that last a lifetime.</p>
                 <div class="hero-buttons">
-                    <button class="primary-btn">Schedule a Consultation</button>
-                    <button class="secondary-btn">Virtual Smile Assessment</button>
+                    <button class="primary-btn" onclick="location.href='#contact'">Schedule a Consultation</button>
+                    <button class="secondary-btn" onclick="location.href='#services'">Virtual Smile Assessment</button>
                 </div>
             </div>
             <div class="hero-image">
@@ -63,7 +74,7 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="treatments">
+    <section id="services" class="treatments">
         <div class="container">
             <div class="section-header">
                 <h2>Our Treatment Options</h2>
@@ -108,7 +119,7 @@
 
 
     <!-- WHY CHOOSE US SECTION -->
-    <section class="why-choose-us">
+    <section id="about" class="why-choose-us">
         <div class="container">
             <div class="section-header">
                 <h2>Why Choose Lane Orthodontics?</h2>
@@ -118,28 +129,28 @@
             <div class="features">
                 <!-- Feature 1 -->
                 <div class="feature">
-                    <div class="feature-icon">⭐</div>
+                    <div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
                     <h3>Experienced Team</h3>
                     <p>Our doctors have over 20 years of combined experience in orthodontics.</p>
                 </div>
 
                 <!-- Feature 2 -->
                 <div class="feature">
-                    <div class="feature-icon">⏰</div>
+                    <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
                     <h3>Flexible Scheduling</h3>
                     <p>Evening and weekend appointments available to accommodate your busy life.</p>
                 </div>
 
                 <!-- Feature 3 -->
                 <div class="feature">
-                    <div class="feature-icon">💬</div>
+                    <div class="feature-icon"><i class="fa-solid fa-hand-holding-hand"></i></div>
                     <h3>Personalized Care</h3>
                     <p>Treatment plans tailored to your unique needs and smile goals.</p>
                 </div>
 
                 <!-- Feature 4 -->
                  <div class="feature">
-                    <div class="feature-icon">📱</div>
+                    <div class="feature-icon"><i class="fa-solid fa-teeth"></i></div>
                     <h3>Advanced Technology</h3>
                     <p>State-of-the-art equipment for precise diagnostics and treatment.</p>
                  </div>
@@ -148,7 +159,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="testimonials">
+    <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
                 <h2>What Our Patients Say</h2>
@@ -188,7 +199,7 @@
         </div>
     </section>
     
-    <section class="cta">
+    <section id="contact" class="cta">
         <div class="container">
             <h2>Ready to Transform Your Smile?</h2>
             <p>Schedule your complimentary consultation today and take the first step towards the smile you've always wanted.</p>
@@ -206,10 +217,9 @@
                     <div class="footer-logo">Lane Orthodontics</div>
                     <p>Providing exceptional orthodontic care in a comfortable, friendly environment.</p>
                     <div class="social-icons">
-                        <a href="#" class="social-icon">📱</a>
-                        <a href="#" class="social-icon">📘</a>
-                        <a href="#" class="social-icon">📸</a>
-                        <a href="#" class="social-icon">🐦</a>
+                        <a href="#" class="social-icon"><i class="fa-solid fa-phone"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -217,12 +227,11 @@
                     <div class="footer-links-column">
                         <h3>Quick Links</h3>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Before & After</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
 
@@ -240,15 +249,14 @@
                     <div class="footer-links-column">
                         <h3>Contact Us</h3>
                         <address>
-                            <p>123 Smile Street</p>
-                            <p>Loma Linda, CA 92354</p>
+                            <p></p>
+                            <p>73-899 Highway 111</p>
                             <p>(909) 799-1825</p>
-                            <p>info@laneorthodontics.com</p>
+                            <p>carterlaneortho@gmail.com</p>
                         </address>
                         <p class="hours">
                             <strong>Hours:</strong><br>
-                            Mon-Fri: 8am-5pm<br>
-                            Sat: 9am-1pm (By appointment)
+                            Mon-Fri: 9am-5pm<br>
                         </p>
                     </div>
 
@@ -261,6 +269,7 @@
         </div>
     </footer>
 
-
+    <script src="index.js"></script>
+    <div class="menu-backdrop"></div>
 </body>
 </html> 
