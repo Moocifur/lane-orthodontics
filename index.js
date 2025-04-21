@@ -44,3 +44,77 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Smooth scrolling for navigation links
+// Select all links and add click w/ function
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Get value like "#about" or "#Services"
+        const targetId = this.getAttribute('href');
+        // Try to querySelect something on document
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            // the height of the fixed header to offset scrolling
+            const headerHeight = document.querySelector('.main-nav').offsetHeight;
+
+            // Calculate the position to scroll to (with header offset)
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            // Scroll smoothy to the target
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navContainer = document.querySelector('.nav-container');
+
+            if (navContainer.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navContainer.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+
+                // for backdrop?
+                const backdrop = document.querySelector('.menu-backdrop');
+                if (backdrop) backdrop.classList.remove('active');
+
+                // Re-wnable scrolling
+                document.body.style.overflow = '';
+            }
+        }
+    });
+});
+
+// add active clas to navigation item based on scroll position aka scroll spy
+window.addEventListener('scroll', function() {
+    // Get current scroll position
+    const scrollPosition = window.scrollY;
+
+    // Get all sections
+    const sections = document.querySelectorAll('section[id]');
+
+    // Loop through sections to find the one in view
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const headerHeight = document.querySelector('.main-nav').offsetHeight;
+
+        // If the section is in view
+        if (scrollPosition >= sectionTop - headerHeight - 50 &&
+            scrollPosition < sectionTop + sectionHeight - headerHeight) {
+
+                // Remove active class from all links
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Add active class to corresponding nav link
+                if ()
+
+            }
+    })
+})
