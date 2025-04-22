@@ -113,8 +113,8 @@ window.addEventListener('scroll', function() {
                 });
 
                 // Add active class to corresponding nav link
-                const correspondingLink = this.document.querySelector(`.nav-links a[href="#${section.id}]`);
-                if (corrospondingLink) {
+                const correspondingLink = this.document.querySelector(`.nav-links a[href="#${section.id}]"`);
+                if (correspondingLink) {
                     correspondingLink.classList.add('active');
                 }
 
