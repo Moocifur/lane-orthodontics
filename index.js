@@ -113,7 +113,10 @@ window.addEventListener('scroll', function() {
                 });
 
                 // Add active class to corresponding nav link
-                if ()
+                const correspondingLink = this.document.querySelector(`.nav-links a[href="#${section.id}]`);
+                if (corrospondingLink) {
+                    correspondingLink.classList.add('active');
+                }
 
             }
     })

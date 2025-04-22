@@ -550,6 +550,7 @@ body {
 .cta .secondary-btn {
     border-color: var(--white);
     color: var(--white);
+    text-decoration: none;
 }
 
 .cta .secondary-btn:hover {
