@@ -165,21 +165,22 @@ body {
     .nav-container { 
         position: fixed;
         top: 0;
-        left: -100%;
+        right: -280px;
         height: 100vh;
-        width: 100%;
+        width: 280px;;
         flex-direction: column;
         background-color: var(--white);
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
         padding-top: 80px;
         transition: all 0.3s ease-in-out;
         z-index: 90;
         justify-content: flex-start;
         overflow-y: auto;
+        padding-bottom: 60px;
     }
 
     .nav-container.active {
-        left: 0;
+        right: 0;
     }
 
     .nav-container .nav-links {
@@ -187,19 +188,20 @@ body {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 0;
+        padding: 0 20px;
     }
 
     .nav-links li {
-        margin: 15px 0;
+        margin: 8px 0;
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
 
     .nav-links a {
         display: block;
-        padding: 10px 0;
-        font-size: 1.2rem;
+        padding: 8px 0;
+        font-size: 1.1rem;
     }
 
     .nav-links a:hover {
@@ -207,8 +209,11 @@ body {
     }
 
     .appointment-btn {
-        margin-top: 30px;
-        padding: 12px 24px;
+        margin-top: 15px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
 
@@ -589,25 +594,39 @@ body {
     max-width: 300px;
 }
 
-.social-icons {
+.contact-methods {
     display: flex;
+    flex-direction: column;
     gap: 12px;
+    margin-top: 20px;
 }
 
-.social-icon {
-    display: inline-flex;
+.contact-method {
+    display: flex;
+    align-items: center;
+    color: #e5e7eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-method:hover {
+    color: #fff;
+}
+
+.contact-icon {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 36px;
     height: 36px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    text-decoration: none;
+    margin-right: 12px;
+    flex-shrink: 0;
     transition: background-color 0.3s ease;
 }
 
-.social-icon:hover {
+.contact-method:hover .contact-icon {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
