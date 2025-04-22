@@ -7,16 +7,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger-menu');
     const navContainer = document.querySelector('.nav-container');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const rhinogramContainer = document.getElementById('rhinogram-container');
 
     // Toggle menu on hamburger icon is clicked
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+
         // Toggle the 'active' class on the hamburger icon (transforms to X)
         hamburger.classList.toggle('active');
         // Toggle the 'active' class on the nav container (slides in / out)
         navContainer.classList.toggle('active');
         // Update aria-expanded for accessibility for readers
         const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-        hamburger.setAttribute('aria-expanded', !expanded); //i need an explanation for this script
+        hamburger.setAttribute('aria-expanded', !expanded);
+
+        // Add/remove backdrop if using one
+        const backdrop = document.querySelector('.menu-backdrop');
+        if (backdrop) {
+            backdrop.classList.toggle('active');
+        }
+
+        // Handle Widget Visibility
+        if (rhinogramContainer) {
+            if (navContainer.classList.contains('active')) {
+                rhinogramContainer.style.display = 'none';
+            } else {
+                setTimeout(function() {
+                    rhinogramContainer.style.display = '';
+                }, 300); //Wait for menu transition to finish
+            }
+        }
     });
 
     // Close menu when any navigation link is clicked
@@ -28,19 +48,45 @@ document.addEventListener('DOMContentLoaded', function() {
             navContainer.classList.remove('active');
             // Update accessibility attribute
             hamburger.setAttribute('aria-expanded', 'false');
+
+            // Remove backdrop if using one
+            const backdrop = document.querySelector('.menu-backdrop');
+            if (backdrop) {
+                backdrop.classList.remove('active');
+            }
+
+            //Restore widget
+            if (rhinogramContainer) {
+                setTimeout(function() {
+                    rhinogramContainer.style.display = '';
+                }, 300);
+            }
         });
     });
 
     // Close menu when clicking anywhere outside the menu
     document.addEventListener('click', function(event) {
         // Check if the click was inside the menu or the hamburger
-        const isClickInside = navContainer.contains(event.target) || hamburger.contains(event.target); //i need an explanation for this script
+        const isClickInside = navContainer.contains(event.target) || hamburger.contains(event.target);
 
         // If click was outside AND the menu is open, close it
         if (!isClickInside && navContainer.classList.contains('active')) {
             hamburger.classList.remove('active');
             navContainer.classList.remove('active');
             hamburger.setAttribute('aria-expanded', 'false');
+
+            // Remove backdrop if using one
+            const backdrop = document.querySelector('.menu-backdrop');
+            if (backdrop) {
+                backdrop.classList.remove('active');
+            }
+
+            // Restore Widget
+            if (rhinogramContainer) {
+                setTimeout(function() {
+                    rhinogramContainer.style.display = '';
+                }, 300);
+            }
         }
     });
 });
@@ -84,6 +130,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
                 // Re-wnable scrolling
                 document.body.style.overflow = '';
+
+                // Restore widget
+                const rhinogramContainer = document.getElementById('rhinogram-container');
+                if (rhinogramContainer) {
+                    setTimeout(function() {
+                        rhinogramContainer.style.display = '';
+                    }, 300);
+                }
             }
         }
     });
@@ -113,7 +167,7 @@ window.addEventListener('scroll', function() {
                 });
 
                 // Add active class to corresponding nav link
-                const correspondingLink = this.document.querySelector(`.nav-links a[href="#${section.id}]"`);
+                const correspondingLink = document.querySelector(`.nav-links a[href="#${section.id}"]`);
                 if (correspondingLink) {
                     correspondingLink.classList.add('active');
                 }

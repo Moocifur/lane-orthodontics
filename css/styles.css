@@ -8,6 +8,7 @@
     --white: #ffffff;
 }
 
+/* Base Styles */
 body {
     font-family: 'Arial', sans-serif;
     color: var(--text-color);
@@ -19,6 +20,10 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Top Bar */
@@ -69,28 +74,10 @@ body {
     color: var(--primary-color);
     font-weight: bold;
     font-size: 1.5rem;
-    margin-right: 40px
+    margin-right: 40px;
 }
 
-/* Hamburger Menu */
-.hamburger-menu {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 100;
-}
-
-.hamburger-menu .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: var(--primary-color);
-    transition: all 0.3s ease-in-out;
-}
-
+/* Navigation Container */
 .nav-container {
     display: flex;
     align-items: center;
@@ -115,11 +102,30 @@ body {
     color: var(--primary-color);
 }
 
-/* Desktop Styles */
+/* Desktop Navigation Styles */
 @media (min-width: 768px) {
     .nav-links {
         display: flex;
     }
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
 }
 
 /* Appointment Button */
@@ -146,6 +152,7 @@ body {
 
 /* Mobile Styles */
 @media (max-width: 767px) {
+    /* Hamburger Menu */
     .hamburger-menu {
         display: block;
     }
@@ -162,26 +169,28 @@ body {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    /* Mobile Navigation Container */
     .nav-container {
         position: fixed;
         top: 0;
         right: -280px; /* Start off-screen */
         height: 100vh;
-        width: 280px; /* Narrower width */
+        width: 280px;
         flex-direction: column;
         background-color: var(--white);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         padding-top: 80px;
         transition: right 0.3s ease-in-out;
-        z-index: 90;
+        z-index: 95; /* Higher than backdrop */
         justify-content: flex-start;
         overflow-y: auto;
-      }
+    }
 
     .nav-container.active {
         right: 0;
     }
 
+    /* Mobile Navigation Links */
     .nav-container .nav-links {
         display: flex;
         flex-direction: column;
@@ -191,25 +200,58 @@ body {
     }
 
     .nav-links li {
-        margin: 15px 0;
+        margin: 8px 0;
         width: 100%;
         text-align: center;
     }
 
     .nav-links a {
         display: block;
-        padding: 10px 0;
+        padding: 15px 0;
         font-size: 1.2rem;
+        width: 100%;
+        position: relative;
+        z-index: 96; /* Higher than nav-container */
     }
 
     .nav-links a:hover {
         background-color: var(--secondary-color);
     }
 
+    /* Mobile Appointment Button */
     .appointment-btn {
-        margin-top: 30px;
+        margin-top: 20px;
         padding: 12px 24px;
+        margin-bottom: 70px; /* Space for chat widget */
+        position: relative;
+        z-index: 96; /* Higher than nav-container */
     }
+
+    /* Menu Backdrop Mobile Positioning */
+    .menu-backdrop {
+        width: calc(100% - 280px);
+        right: 280px; 
+        left: auto;
+    }
+}
+
+/* Menu Backdrop */
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 85;
+}
+
+.menu-backdrop.active {
+    opacity: 0.3;
+    visibility: visible;
 }
 
 /* Hero Section */
@@ -249,6 +291,59 @@ body {
     gap: 12px;
 }
 
+.hero-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Desktop Styles */
+@media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-content {
+        flex: 1;
+        text-align: left;
+        padding-right: 40px;
+        margin-bottom: 0;
+    }
+
+    .hero p {
+        margin: 0 0 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: row;
+    }
+
+    .hero-image {
+        flex: 1;
+    }
+}
+
+/* Hero Mobile Styles */
+@media (max-width: 767px) {
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-image img {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+}
+
+/* Button Styles */
 .primary-btn {
     background-color: var(--primary-color);
     color: var(--white);
@@ -279,42 +374,7 @@ body {
     background-color: rgba(26, 86, 219, 0.05);
 }
 
-.hero-image img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-@media (min-width: 768px) {
-    .hero-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .hero-content {
-        flex: 1;
-        text-align: left;
-        padding-right: 40px;
-        margin-bottom: 0;
-    }
-
-    .hero p {
-        margin: 0 0 24px;
-    }
-
-    .hero-buttons {
-        flex-direction: row;
-    }
-
-    .hero-image {
-        flex: 1;
-    }
-}
-
-/* Section Header */
+/* Section Headers */
 .section-header {
     text-align: center;
     margin-bottom: 48px;
@@ -404,6 +464,7 @@ body {
     transform: translateX(4px);
 }
 
+/* Treatment Cards Responsive */
 @media (min-width: 768px) {
     .treatment-cards {
         grid-template-columns: repeat(2, 1fr);
@@ -453,7 +514,7 @@ body {
     color: var(--text-light);
 }
 
-/* Make features responsive */
+/* Features Responsive */
 @media (min-width: 640px) {
     .features {
         grid-template-columns: repeat(2, 1fr);
@@ -501,7 +562,7 @@ body {
     color: var(--text-color);
 }
 
-/* Make testimonials responsive */
+/* Testimonials Responsive */
 @media (min-width: 768px) {
     .testimonial-cards {
         grid-template-columns: repeat(3, 1fr);
@@ -557,6 +618,7 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* CTA Responsive */
 @media (min-width: 640px) {
     .cta-buttons {
         flex-direction: row;
@@ -682,7 +744,7 @@ address p {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Make footer responsive */
+/* Footer Responsive */
 @media (min-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr 2fr;
@@ -691,28 +753,4 @@ address p {
     .footer-links {
         grid-template-columns: repeat(3, 1fr);
     }
-}
-
-/* Menu Backdrop (Optional Enhancement) */
-.menu-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 85;
-}
-
-.menu-backdrop.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Smooth Scrolling (Optional Enhancement) */
-html {
-    scroll-behavior: smooth;
 }
