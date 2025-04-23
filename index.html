@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lane Orthodontics</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <!-- HEADER SECTION -->
     <header>
+
+        <!-- Header -->
         <div class="top-bar">
             <div class="container">
                 <div class="contact-info">
@@ -28,8 +31,11 @@
             </div>
         </div>
 
+        <!-- NavBar -->
         <nav class="main-nav">
             <div class="container">
+
+                <!-- Logo -->
                 <div class="logo">Lane Orthodontics</div>
 
                  <!-- Hamburger menu button -->
@@ -39,7 +45,10 @@
                     <span class="bar"></span>
                 </button>
 
-                <div class="nav-container side-menu">
+                <!-- Nav Links -->
+                <div class="nav-container">
+
+                    <!-- Nav Links -->
                     <ul class="nav-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
@@ -47,44 +56,55 @@
                         <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
-                    <button class="appointment-btn lightbox-201747138890158">
+
+                    <!-- Button in Nav-->
+                    <button class="btn btn-primary appointment-btn lightbox-201747138890158">
                         <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
                         Book Appointment
                     </button>
+                    
                 </div>
+
             </div>
         </nav>
     </header>
     
-    <!-- HERO SECTION-->
-    <section id="home" class="hero">
+    <!-- HERO SECTION -->
+    <section id="home" class="hero section">
         <div class="container hero-container">
+
+            <!-- Hero -->
             <div class="hero-content">
                 <h1>Your Perfect Smile Begins Here</h1>
                 <p>State-of-the-art orthodontic care for patients of all ages. We're committed to creating beautiful, healthy smiles that last a lifetime.</p>
-                <div class="hero-buttons">
-                    <button class="primary-btn lightbox-201747138890158">Request Appointment</button>
+                <div class="hero-buttons btn-container">
+                    <button class="btn btn-primary lightbox-201747138890158">Request Appointment</button>
                 </div>
             </div>
+
+            <!-- Hero Image -->
             <div class="hero-image">
                 <img src="images/smile-patient.png" alt="Happy patient with braces">
             </div>
+
         </div>
     </section>
 
     <!-- SERVICES SECTION -->
-    <section id="services" class="treatments">
+    <section id="services" class="treatments section section-light">
         <div class="container">
+
+            <!-- Header -->
             <div class="section-header">
                 <h2>Our Treatment Options</h2>
                 <p>We offer a variety of orthodontic solutions tailored to your specific needs and lifestyle.</p>
             </div>
 
+            <!-- Treatment Cards Container -->
             <div class="treatment-cards">
 
-
                 <!-- Treatment Card 1 -->
-                <div class="treatment-card">
+                <div class="treatment-card card card-hover">
                     <img src="images/braces.png" alt="Traditional Braces">
                     <div class="card-content">
                         <h3>Traditional Braces</h3>
@@ -94,7 +114,7 @@
                 </div>
                 
                 <!-- Treatment Card 2-->
-                <div class="treatment-card">
+                <div class="treatment-card card card-hover">
                     <img src="images/aligners.png" alt="Clear Aligners">
                     <div class="card-content">
                         <h3>Clear Aligners</h3>
@@ -104,7 +124,7 @@
                 </div>
 
                 <!-- Treatment Card 3-->
-                <div class="treatment-card">
+                <div class="treatment-card card card-hover">
                     <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
                     <div class="card-content">
                         <h3>Accelerated Orthodontics</h3>
@@ -112,63 +132,72 @@
                         <!-- <a href="#" class="learn-more">Learn more</a> -->
                     </div>
                 </div>
+
             </div>
+
         </div>
     </section>
 
 
     <!-- WHY CHOOSE US SECTION -->
-    <section id="about" class="why-choose-us">
+    <section id="about" class="why-choose-us section section-dark">
         <div class="container">
+
+            <!-- Header -->
             <div class="section-header">
                 <h2>Why Choose Lane Orthodontics?</h2>
                 <p>We combine expertise with compassion to provide exceptional orthodontic care.</p>
             </div>
 
+            <!-- Features Container -->
             <div class="features">
                 <!-- Feature 1 -->
-                <div class="feature">
+                <div class="feature card">
                     <div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
                     <h3>Experienced Team</h3>
                     <p>Our doctors have over 20 years of combined experience in orthodontics.</p>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="feature">
+                <div class="feature card">
                     <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
                     <h3>Flexible Scheduling</h3>
                     <p>Evening and weekend appointments available to accommodate your busy life.</p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="feature">
+                <div class="feature card">
                     <div class="feature-icon"><i class="fa-solid fa-hand-holding-hand"></i></div>
                     <h3>Personalized Care</h3>
                     <p>Treatment plans tailored to your unique needs and smile goals.</p>
                 </div>
 
                 <!-- Feature 4 -->
-                 <div class="feature">
+                 <div class="feature card">
                     <div class="feature-icon"><i class="fa-solid fa-teeth"></i></div>
                     <h3>Advanced Technology</h3>
                     <p>State-of-the-art equipment for precise diagnostics and treatment.</p>
                  </div>
             </div>
+
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section id="testimonials" class="testimonials">
+    <section id="testimonials" class="testimonials section section-light">
         <div class="container">
+
+            <!-- Testimonial Header-->
             <div class="section-header">
                 <h2>What Our Patients Say</h2>
                 <p>Don't just take our word for it - hear from our satisfied patients.</p>
             </div>
 
+            <!-- Testimonials Container-->
             <div class="testimonial-cards">
 
                 <!-- Testimonial 1-->
-                <div class="testimonial-card">
+                <div class="testimonial-card card">
                     <div class="stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
@@ -177,7 +206,7 @@
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card">
+                <div class="testimonial-card card">
                     <div class="stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
@@ -186,7 +215,7 @@
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-card">
+                <div class="testimonial-card card">
                     <div class="stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
@@ -195,15 +224,21 @@
                 </div>
 
             </div>
+
         </div>
     </section>
     
-    <section id="contact" class="cta">
+    <section id="contact" class="cta section">
         <div class="container">
-            <h2>Ready to Transform Your Smile?</h2>
-            <p>Schedule your complimentary consultation today and take the first step towards the smile you've always wanted.</p>
-            
-            <div class="cta-buttons">
+
+            <!-- Contact Header-->
+            <div class="section-header">
+                <h2>Ready to Transform Your Smile?</h2>
+                <p>Schedule your complimentary consultation today and take the first step towards the smile you've always wanted.</p>
+            </div>
+            <!-- CTA Buttons Container-->
+            <div class="cta-buttons btn-container">
+
                 <!-- Lightbox Appointment Form Button -->
                 <script src="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script>
                 <script type="text/javascript">
@@ -211,7 +246,7 @@
                         formId: '201747138890158',
                         base: 'https://form.jotform.com/',
                         windowTitle: 'Appointment Request Form',
-                        backgroundColor: '#1a56db', // Changed to match your primary color
+                        backgroundColor: '#1a56db',
                         fontColor: '#FFFFFF',
                         type: 'false',
                         height: 500,
@@ -223,37 +258,72 @@
                 <script>
                     window.jotformEmbedHandler("iframe[id='201747138890158']", "https://form.jotform.com/")
                 </script>
+
+                <!-- Lightbox Payment Form Button -->
+                <script src="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script>
+                <script type="text/javascript">
+                    var JFL_202316251833144 = new JotformFeedback({
+                        formId: '202316251833144',
+                        base: 'https://form.jotform.com/',
+                        windowTitle: 'Lane Orthodontics Payment Form',
+                        backgroundColor: '#4a90e2',
+                        fontColor: '#FFFFFF',
+                        type: '1',
+                        height: 500,
+                        width: 700,
+                        openOnLoad: false
+                    });
+                </script>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>
+                    window.jotformEmbedHandler("iframe[id='202316251833144']", "https://form.jotform.com/")
+                </script>
                 
-                <!-- Use your existing button styling with the lightbox class -->
-                <a class="primary-btn lightbox-201747138890158">Request Appointment</a>
+                <!-- Request Appointment Button -->
+                <a class="btn btn-primary lightbox-201747138890158">Request Appointment</a>
                 
-                <!-- Call Us button -->
-                <a href="tel:9097991825" class="secondary-btn">Call Us</a>
+                <!-- Call Us Button -->
+                <a href="tel:9097991825" class="btn btn-secondary">Call Us</a>
+
             </div>
+
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
+
+            <!-- Footer Container -->
             <div class="footer-content">
                 <div class="footer-logo-section">
+
+                    <!-- Footer Header-->
                     <div class="footer-logo">Lane Orthodontics</div>
                     <p>Providing exceptional orthodontic care in a comfortable, friendly environment.</p>
+                    
+                    <!-- Contact Container-->
                     <div class="contact-methods">
+                        
+                        <!-- Phone Button-->
                         <a href="tel:9097991825" class="contact-method">
                             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                             <span>(909) 799-1825</span>
                         </a>
+                        
+                        <!-- Email Button -->
                         <a href="mailto:carterlaneortho@gmail.com" class="contact-method">
                             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                             <span>carterlaneortho@gmail.com</span>
                         </a>
+
                     </div>
                 </div>
 
-
-
+                <!-- Footer Links Container -->
                 <div class="footer-links">
+
+                    <!-- Quick Links Column 1 -->
                     <div class="footer-links-column">
                         <h3>Quick Links</h3>
                         <ul>
@@ -265,6 +335,7 @@
                         </ul>
                     </div>
 
+                    <!-- Services Links Column 2 -->
                     <div class="footer-links-column">
                         <h3>Our Services</h3>
                         <ul>
@@ -276,14 +347,16 @@
                         </ul>
                     </div>
 
+                    <!-- Contact Links Column 3 -->
                     <div class="footer-links-column">
                         <h3>Contact Us</h3>
                         <address>
-                            <p></p>
-                            <p>73-899 Highway 111</p>
+                            <p>73-899 Highway 111<br>
+                                Palm Desert, CA 92260</p>
                             <p>(909) 799-1825</p>
                             <p>carterlaneortho@gmail.com</p>
                         </address>
+
                         <p class="hours">
                             <strong>Hours:</strong><br>
                             Mon-Fri: 9am-5pm<br>
@@ -293,15 +366,19 @@
                 </div>
             </div>
 
+            <!-- Copyright Footer -->
             <div class="copyright">
                 <p>&copy; 2025 Lane Orthodontics. All rights reserved.</p>
             </div>
+
         </div>
     </footer>
 
+    <!-- SCRIPTS -->
     <script src="index.js"></script>
     <div class="menu-backdrop"></div>
     <div id="rhinogram-container"></div>
     <script id="rhinogram-embed" src="https://app.rhinogram.com/widget/embed.js?id=10ef415e-070c-4710-b08a-e0e26ab542e3"></script>
+
 </body>
 </html> 
