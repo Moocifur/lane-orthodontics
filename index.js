@@ -7,8 +7,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger-menu');
     const navContainer = document.querySelector('.nav-container');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const toggleOptions = document.querySelectorAll('.toggle-option');
 
-    // Toggle menu on hamburger icon is clicked
+    // Add click event to toggle Buttons --
+    toggleOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            //Update active toggle button
+            toggleOptions.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            this.classList.add('active');
+
+            // Get selected location (we'll use this soon)
+            const selectedLocation = this.getAttribute('data-location');
+            console.log('Selected location:', selectedLocation);
+
+            // Store user's location preference in localStorage
+            // This will help rememeber their preference when they return to the site
+            localStorage.setItem('preferredLocation', selectedLocation);
+        });
+    });
+
+    // Check for saved location preference
+    const savedLocation = localStorage.getItem('preferredLocation');
+    if (savedLocation) {
+        // Find the saved location toggle and click it
+        const savedToggle = document.querySelector(`.toggle-option[data-location="${savedLocation}"]`);
+        if (savedToggle) {
+            savedToggle.click();
+        }
+    }
+
+    // Toggle menu on hamburger icon is clicked --
     hamburger.addEventListener('click', function() {
         // Toggle the 'active' class on the hamburger icon (transforms to X)
         hamburger.classList.toggle('active');
@@ -16,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navContainer.classList.toggle('active');
         // Update aria-expanded for accessibility for readers
         const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-        hamburger.setAttribute('aria-expanded', !expanded); //i need an explanation for this script
+        hamburger.setAttribute('aria-expanded', !expanded);
     });
 
     // Close menu when any navigation link is clicked
@@ -117,7 +147,6 @@ window.addEventListener('scroll', function() {
                 if (correspondingLink) {
                     correspondingLink.classList.add('active');
                 }
-
             }
     })
 })

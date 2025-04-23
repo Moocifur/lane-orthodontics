@@ -1,5 +1,6 @@
 /* css/styles.css */
 
+/* -- ROOT -- */
 :root {
 
     /* Colors */
@@ -100,7 +101,8 @@
     background-color: var(--secondary-color);
 }
 
-/* -- Reset Styling -- */
+
+/* -- RESET STYLING -- */
 * {
     margin: 0;
     padding: 0;
@@ -126,7 +128,8 @@ body {
     padding: 0 20px;
 }
 
-/* Top Bar */
+
+/* -- TOP BAR - START -- */
 .top-bar {
     background-color: var(--primary-color);
     color: var(--white);
@@ -138,9 +141,14 @@ body {
     align-items: center;
 }
 
+/* Container for contacts */
 .contact-info {
     display: flex;
     gap: 16px;
+}
+
+.icon {
+    margin-right: var(--spacing-xs);
 }
 
 .phone, .address {
@@ -148,11 +156,61 @@ body {
     align-items: center;
 }
 
-.icon {
-    margin-right: var(--spacing-xs);
+address {
+    font-style: normal;
+    margin-bottom: 12px;
 }
 
-/* Main Navigation */
+address p {
+    margin-bottom: 4px;
+}
+
+/* Location Toggle Styling */
+.location-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.toggle-container {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.toggle-option {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.toggle-option.active {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* -Mobile adjustments for toggle- */
+@media (max-width: 767px) {
+    .top-bar .container {
+        flex-wrap: wrap;
+    }
+
+    .location-toggle {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* -- NAVIGATION -- */
 .main-nav {
     background-color: var(--white);
     padding: var(--spacing-md) 0;
@@ -719,14 +777,7 @@ body {
     color: #fff;
 }
 
-address {
-    font-style: normal;
-    margin-bottom: 12px;
-}
 
-address p {
-    margin-bottom: 4px;
-}
 
 .hours {
     margin-top: 12px;
