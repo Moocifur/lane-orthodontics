@@ -128,6 +128,29 @@ body {
     padding: 0 20px;
 }
 
+/* Pallet Chananging Stuff
+/* Palm Desert theme colors */
+/* Palm Desert theme colors */
+body.location-palm-desert {
+    --primary-color: #2C4312;      /* Dark green from the palm leaf design */
+    --primary-dark: #1E2F0D;       /* Darker green for hover states */
+    --secondary-color: #E9B87C;    /* Sandy/tan background color */
+    --text-color: #2C4312;         /* Dark green for text */
+    --text-light: #4A4A3A;         /* Lighter text color */
+    --footer-bg: #2C4312;          /* Dark green for footer */
+    --footer-text: #F3EADC;        /* Light sand color for footer text */
+}
+
+/* Keep Loma Linda with blue theme */
+body.location-loma-linda {
+    --primary-color: #1a56db;      /* Original blue */
+    --primary-dark: #1e429f;       /* Original dark blue */
+    --secondary-color: #f3f4f6;    /* Original light gray */
+    --text-color: #374151;         /* Original text color */
+    --text-light: #6b7280;         /* Original light text */
+    --footer-bg: #1f2937;          /* Original footer */
+    --footer-text: #e5e7eb;        /* Original footer text */
+}
 
 /* -- TOP BAR - START -- */
 .top-bar {
@@ -233,6 +256,22 @@ address p {
     font-size: 1.5rem;
     margin-right: 40px
 }
+
+/* Logo styling */
+.logo-img {
+    height: 160px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any default inline spacing */
+    padding: -100px;;
+}
+
+/* Make the logo responsive */
+@media (max-width: 767px) {
+    .logo-img {
+        height: 160px; /* Slightly smaller on mobile */
+    }
+}
+
 
 /* Hamburger Menu */
 .hamburger-menu {
@@ -421,6 +460,15 @@ address p {
     height: auto;
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
+}
+
+/* Add a body class to change styles based on location */
+body.location-loma-linda .hero {
+    background: linear-gradient(to right, #e6ffef, #f0fff7);
+    /* You can also use a background image instead */
+    /* background-image: url('images/loma-linda-background.jpg');
+    background-size: cover;
+    background-position: center; */
 }
 
 @media (min-width: 768px) {
@@ -823,4 +871,93 @@ address p {
 .menu-backdrop.active {
     opacity: 1;
     visibility: visible;
+}
+
+/*----------------------------------------*/
+/* Pallet Chananging Stuff
+
+/* Palm Desert theme colors */
+body.location-palm-desert {
+    --primary-color: #2C4312;      /* Dark green from the palm leaf design */
+    --primary-dark: #1E2F0D;       /* Darker green for hover states */
+    --secondary-color: #E9B87C;    /* Sandy/tan background color */
+    --text-color: #2C4312;         /* Dark green for text */
+    --text-light: #4A4A3A;         /* Lighter text color */
+    --footer-bg: #2C4312;          /* Dark green for footer */
+    --footer-text: #F3EADC;        /* Light sand color for footer text */
+}
+
+/* Main navigation styling for Palm Desert */
+body.location-palm-desert .main-nav {
+    background-color: var(--secondary-color); /* Sandy tan color */
+    background-image: url('images/palm-leaf-pattern.png');
+    background-repeat: repeat-x;
+    background-position: top center;
+    padding-top: 15px; /* Extra padding to accommodate palm leaves */
+}
+
+/* Logo color for Palm Desert */
+body.location-palm-desert .logo {
+    color: var(--primary-color); /* Dark green */
+}
+
+/* Navigation links for Palm Desert */
+body.location-palm-desert .nav-links a {
+    color: var(--primary-color);
+}
+
+body.location-palm-desert .nav-links a:hover {
+    color: var(--primary-dark);
+}
+
+/* Hamburger menu for Palm Desert */
+body.location-palm-desert .hamburger-menu .bar {
+    background-color: var(--primary-color);
+}
+
+/* -- Palm Desert Hero Styling -- */
+body.location-palm-desert .hero {
+    background-color: var(--primary-color); /* Dark green background */
+    background-image: url('images/palm-leaf-pattern.png');
+    background-repeat: repeat-x;
+    background-position: top;
+    color: white;
+    padding-top: 60px; /* Space for palm leaves */
+}
+
+body.location-palm-desert .hero h1,
+body.location-palm-desert .hero p {
+    color: white; /* Make all hero text white */
+}
+
+/* Style the banner header like in your image */
+body.location-palm-desert .hero .hero-container {
+    position: relative;
+}
+
+body.location-palm-desert .hero-content {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+}
+
+/* Make sure the button style works on the dark background */
+body.location-palm-desert .hero .btn-primary {
+    background-color: var(--secondary-color); /* Sandy color */
+    color: var(--primary-color); /* Dark green text */
+}
+
+body.location-palm-desert .hero .btn-primary:hover {
+    background-color: #daa96a; /* Slightly darker sand on hover */
+}
+
+/* Keep Loma Linda with blue theme */
+body.location-loma-linda {
+    --primary-color: #1a56db;      /* Original blue */
+    --primary-dark: #1e429f;       /* Original dark blue */
+    --secondary-color: #f3f4f6;    /* Original light gray */
+    --text-color: #374151;         /* Original text color */
+    --text-light: #6b7280;         /* Original light text */
+    --footer-bg: #1f2937;          /* Original footer */
+    --footer-text: #e5e7eb;        /* Original footer text */
 }

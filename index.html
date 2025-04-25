@@ -19,15 +19,22 @@
             <div class="container">
                 <div class="contact-info">
 
-                    <div class="phone">
+                    <!-- Phone number that changes based on location -->
+                    <div class="phone" data-location-content="true"> <!--What is "data-location-content="true"" for?-->
                         <span class="icon"><i class="fa-solid fa-phone"></i></span>
                         <span>(909) 799-1825</span>
+                        <!--Same phone number, so i might not need to change this?-->
                     </div>
 
-                    <div class="address">
+                    <!-- Address that changes based on location -->
+                    <div class="address" data-location-content="true">
                         <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-                        <span>73-899 Highway 111<br>
+                        <!-- Palm Desset address -->
+                        <span data-location="palm-desert">73-899 Highway 111<br>
                             Palm Desert, CA 92260</span>
+                        <!-- Loma Linda address -->
+                        <span data-location="loma-linda" style="display: none;">Mobile RV Unit<br>
+                            Loma Linda, CA</span>
                     </div>
 
                     <!-- Location Toggle -->
@@ -42,7 +49,7 @@
                             </button>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -52,7 +59,8 @@
             <div class="container">
 
                 <!-- Logo -->
-                <div class="logo">Lane Orthodontics</div>
+                <!-- <div class="logo">Lane Orthodontics</div> -->
+                <img src="images/logo3.png" class="logo-img" alt="logo">
 
                  <!-- Hamburger menu button -->
                 <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
@@ -89,10 +97,9 @@
 
     
     <!-- HERO SECTION -->
-    <section id="home" class="hero section">
-        <div class="container hero-container">
-
-            <!-- Hero -->
+    <section id="home" class="hero section" data-location-content="true">
+        <!-- Palm Desert Hero -->
+        <div data-location="palm-desert" class="container hero-container">
             <div class="hero-content">
                 <h1>Your Perfect Smile Begins Here</h1>
                 <p>State-of-the-art orthodontic care for patients of all ages. We're committed to creating beautiful, healthy smiles that last a lifetime.</p>
@@ -101,11 +108,34 @@
                 </div>
             </div>
 
-            <!-- Hero Image -->
             <div class="hero-image">
-                <img src="images/smile-patient.png" alt="Happy patient with braces">
+                <img src="images/hero-palm.png" alt="Happy patient with braces">
             </div>
+        </div>
 
+        <!-- Loma Linda Hero-->
+        <div data-location="loma-linda" style="display: none;" class="hero-container container">
+            <div class="hero-content">
+                <h1>Straight Smiles - no waiting rooms!</h1>
+                <p>The Wire Wagon is California’s fully licensed, fully mobile orthodontic practice—
+                    bringing straight teeth and good vibes straight to you! Whether we're parked
+                    under the shade of a tree at your local park or pulling up curbside to your home,
+                    our mission is to make orthodontic care as easy and enjoyable as possible.
+                    
+                    Licensed by the California Dental Board, we provide professional, high-quality
+                    orthodontic services in a relaxed, outdoor setting that skips the stress of
+                    traditional office visits. 
+                    
+                    Think of us as your neighborhood smile-mobile—making orthodontics
+                    convenient, comfortable, and just a little more fun.</p>
+                <div class="hero-buttons btn-container">
+                    <button class="btn btn-primary lightbox-201747138890158">Request Appointment</button>
+                </div>
+            </div>    
+
+            <div class="hero-image">
+                <img src="images/hero-wagon.png" alt="wire-wagon">
+            </div>
         </div>
     </section>
 

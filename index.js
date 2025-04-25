@@ -8,25 +8,51 @@ document.addEventListener('DOMContentLoaded', function() {
     const navContainer = document.querySelector('.nav-container');
     const navLinks = document.querySelectorAll('.nav-links a');
     const toggleOptions = document.querySelectorAll('.toggle-option');
+    // Get all content elements that change based on location
+    const locationContent = document.querySelectorAll('[data-location-content="true"]');
+
 
     // Add click event to toggle Buttons --
     toggleOptions.forEach(option => {
         option.addEventListener('click', function() {
+            //Get selected location
+            const selectedLocation = this.getAttribute('data-location');
+            console.log('Selected location:', selectedLocation);
+            
             //Update active toggle button
             toggleOptions.forEach(btn => {
                 btn.classList.remove('active');
             });
             this.classList.add('active');
 
-            // Get selected location (we'll use this soon)
-            const selectedLocation = this.getAttribute('data-location');
-            console.log('Selected location:', selectedLocation);
+            // Update content visibility
+            updateLocationContent(selectedLocation);
 
-            // Store user's location preference in localStorage
-            // This will help rememeber their preference when they return to the site
+            // Store user's location preference
             localStorage.setItem('preferredLocation', selectedLocation);
         });
     });
+
+    //Function to update content based on location
+    function updateLocationContent(selectedLocation) {
+        //Add body class for location-specific styling
+        document.body.classList.remove('location-palm-desert', 'location-loma-linda');
+        document.body.classList.add('location-' + selectedLocation);
+
+        // Update visible content
+        locationContent.forEach(container => {    
+            // Get all location-specific elements within this container
+            const locationElements = container.querySelectorAll('[data-location]');
+
+            locationElements.forEach(element => {
+                if (element.getAttribute('data-location') === selectedLocation) {
+                    element.style.display = '';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        });
+    }
 
     // Check for saved location preference
     const savedLocation = localStorage.getItem('preferredLocation');
@@ -36,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (savedToggle) {
             savedToggle.click();
         }
+    } else {
+        // Default to Palm Desert if no saved preference
+        updateLocationContent('palm-desert');
     }
 
     // Toggle menu on hamburger icon is clicked --
