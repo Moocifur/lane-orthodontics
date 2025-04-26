@@ -60,7 +60,7 @@
 
                 <!-- Logo -->
                 <!-- <div class="logo">Lane Orthodontics</div> -->
-                <img src="images/logo3.png" class="logo-img" alt="logo">
+                <img src="images/logo-white.png" class="logo-img" alt="logo">
 
                  <!-- Hamburger menu button -->
                 <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
@@ -103,13 +103,17 @@
             <div class="hero-content">
                 <h1>Your Perfect Smile Begins Here</h1>
                 <p>State-of-the-art orthodontic care for patients of all ages. We're committed to creating beautiful, healthy smiles that last a lifetime.</p>
-                <div class="hero-buttons btn-container">
+                <!-- <div class="hero-buttons btn-container">
                     <button class="btn btn-primary lightbox-201747138890158">Request Appointment</button>
-                </div>
+                </div> -->
             </div>
 
             <div class="hero-image">
-                <img src="images/hero-palm.png" alt="Happy patient with braces">
+                <video autoplay muted loop playsinline poster="images/hero-fallback.jpg" class="hero-video">
+                    <source src="images/hero-vid.mp4" type="video/mp4">
+                    <!-- Fallback for browsers that don't support video -->
+                    <img src="images/hero-fallback.jpg" alt="Happy patient with braces">
+                </video>
             </div>
         </div>
 
@@ -139,14 +143,61 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- CTA BUTTONS SECTION -->
+    <section class="sandy-actions">
+        <div class="container">
+            <div class="action-buttons">
+
+                <div class="button-wrapper">
+                    <img src="images/rocks.png" alt="" class="desert-element cactus">
+                    <button class="circular-btn lightbox-201747138890158">
+                        Request an Appointment
+                    </button>
+                </div>
+
+                <div class="button-wrapper">
+                    <img src="images/cactus.png" alt="" class="desert-element succulent-left">
+                    <button class="circular-btn lightbox-201747138890158">
+                        Make a Payment Online
+                    </button>
+                </div>
+
+                <div class="button-wrapper">
+                    <img src="images/succulent2.png" alt="" class="desert-element succulent-right">
+                    <button class="circular-btn lightbox-201747138890158">
+                        New Patient Paperwork
+                    </button>
+                </div>
+
+            </div>
+        </div>
+   
+    </section>
+
+    <!-- DR. LANE SECTION -->
     <section id="services" class="treatments section section-light">
         <div class="container">
 
             <!-- Header -->
             <div class="section-header">
-                <h2>Our Treatment Options</h2>
-                <p>We offer a variety of orthodontic solutions tailored to your specific needs and lifestyle.</p>
+                <h2>Meet Dr. Lane</h2>
+                <!-- <img src="images/lane.jpg" alt="Dr Lane"> -->
+                <p>Dr. Lane is a proud graduate of Loma Linda School of Dentistry, receiving his DDS as well as his Master's degree in Orthodontics and Dentofacial Orthopedics.
+                    For over 15 years Dr. Lane has never lost his passion for creating beautiful smiles, offering each patient affordable, personalized, and precise Orthodontic treatment.
+                    When not in the office, you can usually find Dr. Lane at the beach with his family. He is known as a perfectionist with a witty sense of humor. There is rarely a dull moment when Dr. Lane is around!</p>
+            </div>
+
+        </div>
+    </section>
+
+     <!-- SERVICES SECTION -->
+     <section id="services" class="treatments section section-light">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="section-header">
+                <h2>We do more than Just straighten teeth</h2>
+                <p>We believe maintaining overall health begins with oral health, therefore we are proud to offer the following services:</p>
             </div>
 
             <!-- Treatment Cards Container -->
@@ -156,9 +207,8 @@
                 <div class="treatment-card card card-hover">
                     <img src="images/braces.png" alt="Traditional Braces">
                     <div class="card-content">
-                        <h3>Traditional Braces</h3>
-                        <p>Reliable and effective treatment option for all types of orthodontic cases.</p>
-                        <!-- <a href="#" class="learn-more">Learn More</a> -->
+                        <h3>???</h3>
+                        <p>Comprehensive orthodontic treatment for adults and children</p>
                     </div>
                 </div>
                 
@@ -166,9 +216,8 @@
                 <div class="treatment-card card card-hover">
                     <img src="images/aligners.png" alt="Clear Aligners">
                     <div class="card-content">
-                        <h3>Clear Aligners</h3>
-                        <p>Virtually invisible aligners for a discreet orthodontic treatment experience.</p>
-                        <!-- <a href="#" class="learn-more">Learn more</a> -->
+                        <h3>???</h3>
+                        <p>In house Panoramic and Cephalometric X-Rays</p>
                     </div>
                 </div>
 
@@ -176,11 +225,66 @@
                 <div class="treatment-card card card-hover">
                     <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
                     <div class="card-content">
-                        <h3>Accelerated Orthodontics</h3>
-                        <p>Advanced techniques to reduce treatment time without compromising results.</p>
-                        <!-- <a href="#" class="learn-more">Learn more</a> -->
+                        <h3>???</h3>
+                        <p>Custom fit Sports guards and Night guards</p>
                     </div>
                 </div>
+
+                <!-- Treatment Card 3-->
+                <div class="treatment-card card card-hover">
+                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
+                    <div class="card-content">
+                        <h3>???</h3>
+                        <p>TMJ treatment</p>
+                    </div>
+                </div>
+
+                <!-- Treatment Card 3-->
+                <div class="treatment-card card card-hover">
+                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
+                    <div class="card-content">
+                        <h3>???</h3>
+                        <p>In office teeth cleanings and exams</p>
+                    </div>
+                </div>
+                
+                <!-- Treatment Card 3-->
+                <div class="treatment-card card card-hover">
+                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
+                    <div class="card-content">
+                        <h3>???</h3>
+                        <p>At home teeth whitening kits</p>
+                    </div>
+                </div>
+                
+                <!-- Treatment Card 3-->
+                <div class="treatment-card card card-hover">
+                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
+                    <div class="card-content">
+                        <h3>???</h3>
+                        <p>Hawley and Lower Fixed retainers</p>
+                    </div>
+                </div>
+                
+                <!-- Treatment Card 3-->
+                <div class="treatment-card card card-hover">
+                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
+                    <div class="card-content">
+                        <h3>???</h3>
+                        <p>Clear brackets and Aligners</p>
+                    </div>
+                </div>
+                
+                <!-- Treatment Card 3-->
+                <div class="treatment-card card card-hover">
+                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
+                    <div class="card-content">
+                        <h3>???</h3>
+                        <p>Complimentary Consultationst</p>
+                    </div>
+                </div>
+
+                
 
             </div>
 
@@ -194,39 +298,51 @@
 
             <!-- Header -->
             <div class="section-header">
-                <h2>Why Choose Lane Orthodontics?</h2>
-                <p>We combine expertise with compassion to provide exceptional orthodontic care.</p>
+                <h2>Don't let finances keep you from your dream smile</h2>
+                <p>We offer interest free payment options!
+
+                    We also accept most PPO insurance plans
+                    Including:</p>
             </div>
 
             <!-- Features Container -->
             <div class="features">
-                <!-- Feature 1 -->
                 <div class="feature card">
-                    <div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
-                    <h3>Experienced Team</h3>
-                    <p>Our doctors have over 20 years of combined experience in orthodontics.</p>
+                    <p>Delta Dental</p>
                 </div>
-
-                <!-- Feature 2 -->
                 <div class="feature card">
-                    <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
-                    <h3>Flexible Scheduling</h3>
-                    <p>Evening and weekend appointments available to accommodate your busy life.</p>
+                    <p>Aetnal</p>
                 </div>
-
-                <!-- Feature 3 -->
                 <div class="feature card">
-                    <div class="feature-icon"><i class="fa-solid fa-hand-holding-hand"></i></div>
-                    <h3>Personalized Care</h3>
-                    <p>Treatment plans tailored to your unique needs and smile goals.</p>
+                    <p>Metlife</p>
                 </div>
-
-                <!-- Feature 4 -->
-                 <div class="feature card">
-                    <div class="feature-icon"><i class="fa-solid fa-teeth"></i></div>
-                    <h3>Advanced Technology</h3>
-                    <p>State-of-the-art equipment for precise diagnostics and treatment.</p>
-                 </div>
+                <div class="feature card">
+                    <p>United Healthcare</p>
+                </div>
+                <div class="feature card">
+                    <p>United Concordia</p>
+                </div>
+                <div class="feature card">
+                    <p>UFCW</p>
+                </div>
+                <div class="feature card">
+                    <p>Tricare Plans</p>
+                </div>
+                <div class="feature card">
+                    <p>Cigna</p>
+                </div>
+                <div class="feature card">
+                    <p>Principal</p>
+                </div>
+                <div class="feature card">
+                    <p>Guardian</p>
+                </div>
+                <div class="feature card">
+                    <p>Risk Management</p>
+                </div>
+                <div class="feature card">
+                    <p>Anthem Blue Cross/ Blue Shield</p>
+                </div>
             </div>
 
         </div>

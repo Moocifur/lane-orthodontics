@@ -1,9 +1,8 @@
-/* css/styles.css */
+/* Clean and organized CSS */
 
-/* -- ROOT -- */
+/* -- ROOT VARIABLES -- */
 :root {
-
-    /* Colors */
+    /* Colors - Base Theme */
     --primary-color: #1a56db;
     --primary-dark: #1e429f;
     --secondary-color: #f3f4f6;
@@ -12,6 +11,15 @@
     --white: #ffffff;
     --footer-bg: #1f2937;
     --footer-text: #e5e7eb;
+
+    /* Palm Desert Theme Colors */
+    --pd-primary: #4a6023;
+    --pd-primary-dark: #344518;
+    --pd-secondary: #e09c54;
+    --pd-text: #2c4312;
+    --pd-text-light: #4a4a3a;
+    --pd-footer-bg: #2c4312;
+    --pd-footer-text: #f3eadc;
 
     /* Spacing */
     --spacing-xs: 4px;
@@ -41,7 +49,69 @@
     --breakpoint-lg: 1024px;
 }
 
-/* -- New Standard Buttons -- */
+/* -- RESET STYLING -- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* -- LAYOUT UTILITIES -- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: var(--spacing-xxl) 0;
+}
+
+.section-light {
+    background-color: var(--white);
+}
+
+.section-dark {
+    background-color: var(--secondary-color);
+}
+
+/* -- THEME SWITCHING -- */
+/* Palm Desert theme */
+body.location-palm-desert {
+    --primary-color: var(--pd-primary);
+    --primary-dark: var(--pd-primary-dark);
+    --secondary-color: var(--pd-secondary);
+    --text-color: var(--pd-text);
+    --text-light: var(--pd-text-light);
+    --footer-bg: var(--pd-footer-bg);
+    --footer-text: var(--pd-footer-text);
+}
+
+/* Loma Linda theme */
+body.location-loma-linda {
+    --primary-color: #1a56db;
+    --primary-dark: #1e429f;
+    --secondary-color: #f3f4f6;
+    --text-color: #374151;
+    --text-light: #6b7280;
+    --footer-bg: #1f2937;
+    --footer-text: #e5e7eb;
+}
+
+/* -- BUTTON STYLES -- */
 .btn {
     border-radius: var(--border-radius-sm);
     padding: var(--spacing-md) var(--spacing-lg);
@@ -76,7 +146,13 @@
     gap: var(--spacing-sm);
 }
 
-/* -- Card Styles -- */
+@media (min-width: 768px) {
+    .btn-container {
+        flex-direction: row;
+    }
+}
+
+/* -- CARD STYLES -- */
 .card {
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-md);
@@ -86,113 +162,84 @@
 .card-hover:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    transition: var(--transition-default);
 }
 
-/* -- Section Styles -- */
-.section {
-    padding: var(--spacing-xxl) 0;
-}
-
-.section-light {
-    background-color: var(--white);
-}
-
-.section-dark {
-    background-color: var(--secondary-color);
-}
-
-
-/* -- RESET STYLING -- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Pallet Chananging Stuff
-/* Palm Desert theme colors */
-/* Palm Desert theme colors */
-body.location-palm-desert {
-    --primary-color: #2C4312;      /* Dark green from the palm leaf design */
-    --primary-dark: #1E2F0D;       /* Darker green for hover states */
-    --secondary-color: #E9B87C;    /* Sandy/tan background color */
-    --text-color: #2C4312;         /* Dark green for text */
-    --text-light: #4A4A3A;         /* Lighter text color */
-    --footer-bg: #2C4312;          /* Dark green for footer */
-    --footer-text: #F3EADC;        /* Light sand color for footer text */
-}
-
-/* Keep Loma Linda with blue theme */
-body.location-loma-linda {
-    --primary-color: #1a56db;      /* Original blue */
-    --primary-dark: #1e429f;       /* Original dark blue */
-    --secondary-color: #f3f4f6;    /* Original light gray */
-    --text-color: #374151;         /* Original text color */
-    --text-light: #6b7280;         /* Original light text */
-    --footer-bg: #1f2937;          /* Original footer */
-    --footer-text: #e5e7eb;        /* Original footer text */
-}
-
-/* -- TOP BAR - START -- */
+/* -- HEADER & NAVIGATION -- */
+/* Top Bar */
 .top-bar {
     background-color: var(--primary-color);
+    background-image: linear-gradient(to right, var(--primary-dark), var(--primary-color), var(--primary-color));
     color: var(--white);
-    padding: 8px 0; 
+    padding: 10px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: visible; /* Allow the pseudo-element to extend outside */
+}
+
+/* Palm leaves decoration */
+.top-bar:before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Increase height */
+    background-image: url('images/drape.png');
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    z-index: 1; /* Lower z-index */
+    pointer-events: none; /* Let clicks pass through */
+}
+
+.top-bar:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.top-bar .phone span, 
+.top-bar .address span,
+.top-bar .toggle-label {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.3px;
 }
 
 .top-bar .container {
-    display: flex;
-    align-items: center;
+    position: relative;
+    z-index: 2; /* Higher z-index than the leaves */
 }
 
-/* Container for contacts */
+
 .contact-info {
     display: flex;
-    gap: 16px;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .icon {
-    margin-right: var(--spacing-xs);
+    margin-right: 8px;
+}
+
+.address {
+    max-width: 200px;
 }
 
 .phone, .address {
     display: flex;
     align-items: center;
+    padding: 4px 0;
 }
 
-address {
-    font-style: normal;
-    margin-bottom: 12px;
-}
-
-address p {
-    margin-bottom: 4px;
-}
-
-/* Location Toggle Styling */
+/* Location Toggle */
 .location-toggle {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+    position: relative;
+    z-index: 3; /* Even higher z-index */
 }
 
 .toggle-container {
@@ -205,42 +252,61 @@ address p {
 .toggle-option {
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 6px 12px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 6px 14px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.85rem;
     transition: all 0.2s ease;
+    position: relative;
 }
 
 .toggle-option.active {
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.95);
     color: var(--primary-color);
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* -Mobile adjustments for toggle- */
-@media (max-width: 767px) {
-    .top-bar .container {
-        flex-wrap: wrap;
-    }
+/* Add indicator for active location */
+.toggle-option.active:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(255, 255, 255, 0.95);
+    opacity: 0.8;
+}
 
+/* Fix for location toggle on mobile */
+@media (max-width: 767px) {
+    .top-bar {
+        padding-top: 25px; /* More padding on mobile */
+    }
+    
     .location-toggle {
         margin-left: 0;
         margin-top: 8px;
         width: 100%;
         justify-content: center;
+        z-index: 10; /* Keep it above the leaves */
     }
 }
 
-
-/* -- NAVIGATION -- */
+/* Main Navigation */
 .main-nav {
     background-color: var(--white);
-    padding: var(--spacing-md) 0;
+    padding: 12px 0;
     position: sticky;
     top: 0;
     z-index: 10;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
 
 .main-nav .container {
@@ -254,24 +320,85 @@ address p {
     color: var(--primary-color);
     font-weight: bold;
     font-size: 1.5rem;
-    margin-right: 40px
+    margin-right: 40px;
 }
 
-/* Logo styling */
 .logo-img {
-    height: 160px; /* Adjust the height as needed */
-    width: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any default inline spacing */
-    padding: -100px;;
+    height: 80px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-/* Make the logo responsive */
-@media (max-width: 767px) {
-    .logo-img {
-        height: 160px; /* Slightly smaller on mobile */
-    }
+.logo-img:hover {
+    transform: scale(1.02);
 }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.nav-links {
+    list-style: none;
+    gap: 24px;
+    display: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition-default);
+    position: relative;
+    padding: 6px 0;
+    font-weight: 500;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+/* Appointment Button */
+.appointment-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.appointment-btn .icon {
+    margin-right: 8px;
+}
 
 /* Hamburger Menu */
 .hamburger-menu {
@@ -292,69 +419,388 @@ address p {
     transition: all 0.3s ease-in-out;
 }
 
-.nav-container {
+/* -- PALM DESERT SPECIFIC STYLING -- */
+/* Top Bar Palm Desert */
+body.location-palm-desert .top-bar {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    position: relative;
+}
+
+/* Palm Desert specific nav enhancements */
+body.location-palm-desert .main-nav {
+    background-color: var(--primary-color);
+    background-image: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+    padding: 12px 0;
+}
+
+body.location-palm-desert .nav-links a {
+    color: white;
+    font-weight: 500;
+}
+
+body.location-palm-desert .nav-links a:after {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+body.location-palm-desert .nav-links a:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+body.location-palm-desert .hamburger-menu .bar {
+    background-color: white;
+}
+
+body.location-palm-desert .logo-img {
+    filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+/* -- HERO SECTION -- */
+.hero {
+    background: linear-gradient(to right, #e6f2ff, #f0f7ff);
+    padding: 60px 0;
+}
+
+.hero-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    flex-grow: 1;
 }
 
-/* Navigation Links */
-.nav-links {
-    list-style: none;
-    gap: 24px;
-    display: none;
+.hero-content {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.nav-links a {
+.hero h1 {
+    font-size: 2.5rem;
     color: var(--text-color);
-    text-decoration: none;
-    transition: var(--transition-default);
+    margin-bottom: var(--spacing-md);
+    font-weight: bold;
 }
 
-.nav-links a:hover {
-    color: var(--primary-color);
+.hero p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 24px;
 }
 
-/* Desktop Styles */
+.hero-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Video in hero section */
+.hero-video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+}
+
+body.location-palm-desert .hero-video {
+    /* border: 6px solid white; */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Palm Desert Hero */
+body.location-palm-desert .hero {
+    background-color: var(--primary-color);
+    background-image: url('images/palm.png');
+    background-repeat: repeat-x;
+    background-position: top;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+body.location-palm-desert .hero h1,
+body.location-palm-desert .hero p {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+body.location-palm-desert .hero-content {
+    background-color: rgba(74, 96, 35, 0.7);
+    padding: 30px;
+    border-radius: var(--border-radius-md);
+    backdrop-filter: blur(5px);
+}
+
+body.location-palm-desert .hero-image img {
+    border: 6px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* -- SANDY ACTIONS SECTION -- */
+
+/* what does this even do? */
+.sandy-actions {
+    background-color: var(--secondary-color);
+    padding: 60px 0;
+    position: relative;
+}
+
+/* Button wrapper styling */
+.button-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.circular-btn {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid rgba(255, 255, 255, 0.3); /* Light border */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.circular-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Desert Elements */
+.desert-element {
+    position: absolute;
+    z-index: 3;
+}
+
+.sandy-actions {
+    background-color: var(--secondary-color);
+    background-image: linear-gradient(to bottom, var(--secondary-color), #d69149);
+    padding: 70px 0;
+    position: relative;
+    overflow: visible;
+}
+
+.sandy-actions .container {
+    position: relative; /* Ensure container is positioned for absolute children */
+}
+
+.sandy-actions .cactus {
+    width: 150px;
+    height: auto;
+    left: -80px;
+    bottom: -20px;
+}
+
+.sandy-actions .succulent-left {
+    width: 150px;
+    height: auto;
+    bottom: -5px;
+    left: -85px;
+    transform: rotate(-8deg);
+}
+
+.sandy-actions .succulent-right {
+    width: 150px;
+    height: auto;
+    left: -70px;
+    bottom: -25px;
+}
+
+/* Responsive styles for desert elements */
+@media (max-width: 1024px) {
+    .sandy-actions .cactus {
+        width: 130px;
+        left: -60px;
+        bottom: -15px;
+    }
+    
+    .sandy-actions .succulent-left {
+        width: 130px;
+        left: -65px;
+        bottom: -5px;
+    }
+    
+    .sandy-actions .succulent-right {
+        width: 130px;
+        left: -55px;
+        bottom: -20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sandy-actions {
+        padding: 60px 0;
+    }
+    
+    .sandy-actions .cactus {
+        width: 110px;
+        left: -50px;
+        bottom: -10px;
+    }
+    
+    .sandy-actions .succulent-left {
+        width: 110px;
+        left: -45px;
+        bottom: -5px;
+    }
+    
+    .sandy-actions .succulent-right {
+        width: 110px;
+        left: -50px;
+        bottom: -15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sandy-actions {
+        padding: 50px 0 70px;
+    }
+    
+    /* For mobile devices with vertical button layout */
+    .sandy-actions .cactus {
+        width: 100px;
+        left: -30px;
+        bottom: auto;
+        top: 40px; /* Position relative to top since buttons are stacked */
+    }
+    
+    .sandy-actions .succulent-left {
+        width: 100px;
+        left: -35px;
+        bottom: auto;
+        top: 160px; /* Position for second button */
+    }
+    
+    .sandy-actions .succulent-right {
+        width: 100px;
+        left: -25px;
+        bottom: auto;
+        top: 280px; /* Position for third button */
+    }
+}
+
+/* @media (max-width: 767px) {
+    .button-wrapper {
+        margin: 30px 10px;
+    }
+
+    .sandy-actions .cactus {
+        width: 200px;
+        right: 50%;
+        top: -30px;
+    }
+    
+    .sandy-actions .succulent-left {
+        width: 150px;
+        right: 50%;
+    }
+    
+    .sandy-actions .succulent-right {
+        width: 100px;
+        right: 50%;
+    }
+
+    .circular-btn {
+        width: 150px;
+        height: 150px;
+        font-size: 0.8rem;
+    }
+
+    .succulent-left, .succulent-right, .cactus {
+        width: 100px;
+    }
+} */
+
+/* -- SECTION HEADERS -- */
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* -- RESPONSIVE STYLES -- */
 @media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-content {
+        flex: 1;
+        text-align: left;
+        padding-right: 40px;
+        margin-bottom: 0;
+    }
+
+    .hero p {
+        margin: 0 0 24px;
+    }
+
+    .hero-image {
+        flex: 1;
+    }
+    
     .nav-links {
         display: flex;
     }
-
-    .btn-container {
-        flex-direction: row;
-    }
 }
 
-/* Appointment Button */
-.appointment-btn {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 6px;
-    padding: 8px 24px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.appointment-btn:hover {
-    background-color: var(--primary-dark);
-}
-
-.appointment-btn .icon {
-    margin-right: 8px;
-}
-
-/* Mobile Styles */
 @media (max-width: 767px) {
+    .top-bar .container {
+        flex-wrap: wrap;
+    }
+
+    .location-toggle {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
+        justify-content: center;
+    }
+    
     .hamburger-menu {
         display: block;
     }
-
+    
     .hamburger-menu.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
@@ -366,13 +812,13 @@ address p {
     .hamburger-menu.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-
+    
     .nav-container { 
         position: fixed;
         top: 0;
         right: -280px;
         height: 100vh;
-        width: 280px;;
+        width: 280px;
         flex-direction: column;
         background-color: var(--white);
         box-shadow: var(--shadow-lg);
@@ -382,6 +828,10 @@ address p {
         justify-content: flex-start;
         overflow-y: auto;
         padding-bottom: 60px;
+    }
+    
+    body.location-palm-desert .nav-container {
+        background-color: var(--primary-dark);
     }
 
     .nav-container.active {
@@ -416,445 +866,30 @@ address p {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
+    
+    .action-buttons {
+        gap: 20px;
+    }
+    
+    .circular-btn {
+        width: 150px;
+        height: 150px;
+        font-size: 0.8rem;
+    }
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(to right, #e6f2ff, #f0f7ff);
-}
-
-.hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero-content {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    color: var(--text-color);
-    margin-bottom: var(--spacing-md);
-    font-weight: bold;
-}
-
-.hero p {
-    font-size: 1.125rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto 24px;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Add a body class to change styles based on location */
-body.location-loma-linda .hero {
-    background: linear-gradient(to right, #e6ffef, #f0fff7);
-    /* You can also use a background image instead */
-    /* background-image: url('images/loma-linda-background.jpg');
-    background-size: cover;
-    background-position: center; */
-}
-
-@media (min-width: 768px) {
-    .hero-container {
-        flex-direction: row;
-        justify-content: space-between;
+@media (max-width: 480px) {
+    .action-buttons {
+        flex-direction: column;
         align-items: center;
     }
-
-    .hero-content {
-        flex: 1;
-        text-align: left;
-        padding-right: 40px;
-        margin-bottom: 0;
-    }
-
-    .hero p {
-        margin: 0 0 24px;
-    }
-
-    .hero-buttons {
-        flex-direction: row;
-    }
-
-    .hero-image {
-        flex: 1;
+    
+    .hero h1 {
+        font-size: 2rem;
     }
 }
 
-/* Section Header */
-.section-header {
-    text-align: center;
-    margin-bottom: 48px;
-}
-
-.section-header h2 {
-    font-size: 2rem;
-    color: var(--text-color);
-    margin-bottom: 16px;
-    font-weight: bold;
-}
-
-.section-header p {
-    font-size: 1.125rem;
-    color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Treatments Section */
-.treatments {
-    background-color: var(--white);
-}
-
-.treatment-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-}
-
-.treatment-card {
-    background: var(--white);
-}
-
-.treatment-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: var(--spacing-lg);
-}
-
-.card-content h3 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-color);
-}
-
-.card-content p {
-    color: var(--text-light);
-    margin-bottom: var(--spacing-md);
-}
-
-.learn-more {
-    display: inline-flex;
-    align-items: center;
-    color: var(--primary-color);
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.learn-more:hover {
-    color: var(--primary-dark);
-}
-
-.learn-more::after {
-    content: "→";
-    margin-left: 4px;
-    transition: transform 0.3s ease;
-}
-
-.learn-more:hover::after {
-    transform: translateX(4px);
-}
-
-@media (min-width: 768px) {
-    .treatment-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .treatment-cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Why Choose Us Section */
-.why-choose-us {
-    background-color: var(--secondary-color);
-}
-
-.features {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-}
-
-.feature {
-    background-color: var(--white);
-    padding: 34px;
-    text-align: center;
-}
-
-.feature-icon {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-md);
-}
-
-.feature h3 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-color);
-}
-
-.feature p {
-    color: var(--text-light);
-}
-
-/* Make features responsive */
-@media (min-width: 640px) {
-    .features {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .features {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Testimonials Section */
-.testimonials {
-    background-color: var(--white);
-}
-
-.testimonial-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-}
-
-.testimonial-card {
-    background-color: var(--secondary-color);
-    padding: 24px;
-}
-
-.stars {
-    margin-bottom: var(--spacing-md);
-    color: #f59e0b;
-}
-
-.quote {
-    font-style: italic;
-    margin-bottom: var(--spacing-md);
-    color: var(--text-color);
-}
-
-.patient-name {
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-/* Make testimonials responsive */
-@media (min-width: 768px) {
-    .testimonial-cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Call to Action Section */
-.cta {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-}
-
-.cta h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: var(--spacing-md);
-    color: var(--white);
-}
-
-.cta p {
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
-    margin: 0 auto var(--spacing-xl);
-}
-
-.cta-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    justify-content: center;
-    max-width: 450px;
-    margin: 0 auto;
-}
-
-.cta .btn-primary {
-    background-color: var(--white);
-    color: var(--primary-color);
-}
-
-.cta .btn-primary:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.cta .btn-secondary {
-    border-color: var(--white);
-    color: var(--white);
-    text-decoration: none;
-}
-
-.cta .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-@media (min-width: 640px) {
-    .cta-buttons {
-        flex-direction: row;
-    }
-}
-
-/* Footer Section */
-.footer {
-    background-color: var(--footer-bg);
-    color: var(--footer-text);
-    padding: var(--spacing-xxl) 0 var(--spacing-lg);
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--footer-text);
-    margin-bottom: var(--spacing-sm);
-}
-
-.footer-logo-section p {
-    margin-bottom: 20px;
-    max-width: 300px;
-}
-
-.contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.contact-method {
-    display: flex;
-    align-items: center;
-    color: #e5e7eb;
-    text-decoration: none;
-    transition: var(--transition-default);
-}
-
-.contact-method:hover {
-    color: #fff;
-}
-
-.contact-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: var(--border-radius-full);
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-right: var(--spacing-sm);
-    flex-shrink: 0;
-    transition: var(--transition-default);
-}
-
-.contact-method:hover .contact-icon {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.footer-links {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-}
-
-.footer-links-column h3 {
-    color: var(--footer-text);
-    font-size: 1.1rem;
-    margin-bottom: var(--spacing-md);
-    font-weight: 600;
-}
-
-.footer-links-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links-column li {
-    margin-bottom: var(--spacing-sm);
-}
-
-.footer-links-column a {
-    color: #e5e7eb;
-    text-decoration: none;
-    transition: var(--transition-default);
-}
-
-.footer-links-column a:hover {
-    color: #fff;
-}
-
-
-
-.hours {
-    margin-top: 12px;
-}
-
-.hours strong {
-    color: var(--footer-text);
-}
-
-.copyright {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Make footer responsive */
-@media (min-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr 2fr;
-    }
-
-    .footer-links {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Menu Backdrop (Optional Enhancement) */
+/* Menu Backdrop */
 .menu-backdrop {
     position: fixed;
     top: 0;
@@ -871,93 +906,4 @@ body.location-loma-linda .hero {
 .menu-backdrop.active {
     opacity: 1;
     visibility: visible;
-}
-
-/*----------------------------------------*/
-/* Pallet Chananging Stuff
-
-/* Palm Desert theme colors */
-body.location-palm-desert {
-    --primary-color: #2C4312;      /* Dark green from the palm leaf design */
-    --primary-dark: #1E2F0D;       /* Darker green for hover states */
-    --secondary-color: #E9B87C;    /* Sandy/tan background color */
-    --text-color: #2C4312;         /* Dark green for text */
-    --text-light: #4A4A3A;         /* Lighter text color */
-    --footer-bg: #2C4312;          /* Dark green for footer */
-    --footer-text: #F3EADC;        /* Light sand color for footer text */
-}
-
-/* Main navigation styling for Palm Desert */
-body.location-palm-desert .main-nav {
-    background-color: var(--secondary-color); /* Sandy tan color */
-    background-image: url('images/palm-leaf-pattern.png');
-    background-repeat: repeat-x;
-    background-position: top center;
-    padding-top: 15px; /* Extra padding to accommodate palm leaves */
-}
-
-/* Logo color for Palm Desert */
-body.location-palm-desert .logo {
-    color: var(--primary-color); /* Dark green */
-}
-
-/* Navigation links for Palm Desert */
-body.location-palm-desert .nav-links a {
-    color: var(--primary-color);
-}
-
-body.location-palm-desert .nav-links a:hover {
-    color: var(--primary-dark);
-}
-
-/* Hamburger menu for Palm Desert */
-body.location-palm-desert .hamburger-menu .bar {
-    background-color: var(--primary-color);
-}
-
-/* -- Palm Desert Hero Styling -- */
-body.location-palm-desert .hero {
-    background-color: var(--primary-color); /* Dark green background */
-    background-image: url('images/palm-leaf-pattern.png');
-    background-repeat: repeat-x;
-    background-position: top;
-    color: white;
-    padding-top: 60px; /* Space for palm leaves */
-}
-
-body.location-palm-desert .hero h1,
-body.location-palm-desert .hero p {
-    color: white; /* Make all hero text white */
-}
-
-/* Style the banner header like in your image */
-body.location-palm-desert .hero .hero-container {
-    position: relative;
-}
-
-body.location-palm-desert .hero-content {
-    background-color: var(--primary-color);
-    padding: 20px;
-    border-radius: var(--border-radius-md);
-}
-
-/* Make sure the button style works on the dark background */
-body.location-palm-desert .hero .btn-primary {
-    background-color: var(--secondary-color); /* Sandy color */
-    color: var(--primary-color); /* Dark green text */
-}
-
-body.location-palm-desert .hero .btn-primary:hover {
-    background-color: #daa96a; /* Slightly darker sand on hover */
-}
-
-/* Keep Loma Linda with blue theme */
-body.location-loma-linda {
-    --primary-color: #1a56db;      /* Original blue */
-    --primary-dark: #1e429f;       /* Original dark blue */
-    --secondary-color: #f3f4f6;    /* Original light gray */
-    --text-color: #374151;         /* Original text color */
-    --text-light: #6b7280;         /* Original light text */
-    --footer-bg: #1f2937;          /* Original footer */
-    --footer-text: #e5e7eb;        /* Original footer text */
 }
