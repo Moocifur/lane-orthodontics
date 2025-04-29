@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lane Orthodontics</title>
-    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -20,7 +19,7 @@
                 <div class="contact-info">
 
                     <!-- Phone number that changes based on location -->
-                    <div class="phone" data-location-content="true"> <!--What is "data-location-content="true"" for?-->
+                    <div class="phone" data-location-content="true"> 
                         <span class="icon"><i class="fa-solid fa-phone"></i></span>
                         <span>(909) 799-1825</span>
                         <!--Same phone number, so i might not need to change this?-->
@@ -103,9 +102,6 @@
             <div class="hero-content">
                 <h1>Your Perfect Smile Begins Here</h1>
                 <p>State-of-the-art orthodontic care for patients of all ages. We're committed to creating beautiful, healthy smiles that last a lifetime.</p>
-                <!-- <div class="hero-buttons btn-container">
-                    <button class="btn btn-primary lightbox-201747138890158">Request Appointment</button>
-                </div> -->
             </div>
 
             <div class="hero-image">
@@ -132,14 +128,20 @@
                     
                     Think of us as your neighborhood smile-mobile—making orthodontics
                     convenient, comfortable, and just a little more fun.</p>
-                <div class="hero-buttons btn-container">
-                    <button class="btn btn-primary lightbox-201747138890158">Request Appointment</button>
-                </div>
+                
             </div>    
 
             <div class="hero-image">
-                <img src="images/hero-wagon.png" alt="wire-wagon">
+                <video autoplay muted loop playsinline poster="images/hero-fallback.jpg" class="hero-video">
+                    <source src="images/hero-vid.mp4" type="video/mp4">
+                    <!-- Fallback for browsers that don't support video -->
+                    <img src="images/hero-fallback.jpg" alt="Happy patient with braces">
+                </video>
             </div>
+        </div>
+
+        <div class="landscape">
+            <div class="beach-cta-img"></div>
         </div>
     </section>
 
@@ -171,216 +173,211 @@
 
             </div>
         </div>
+
+        
    
     </section>
 
     <!-- DR. LANE SECTION -->
-    <section id="services" class="treatments section section-light">
+    <section id="about-doctor" class="doctor-profile section">
         <div class="container">
-
-            <!-- Header -->
-            <div class="section-header">
-                <h2>Meet Dr. Lane</h2>
-                <!-- <img src="images/lane.jpg" alt="Dr Lane"> -->
-                <p>Dr. Lane is a proud graduate of Loma Linda School of Dentistry, receiving his DDS as well as his Master's degree in Orthodontics and Dentofacial Orthopedics.
-                    For over 15 years Dr. Lane has never lost his passion for creating beautiful smiles, offering each patient affordable, personalized, and precise Orthodontic treatment.
-                    When not in the office, you can usually find Dr. Lane at the beach with his family. He is known as a perfectionist with a witty sense of humor. There is rarely a dull moment when Dr. Lane is around!</p>
+            <div class="doctor-content">
+                <div class="doctor-info">
+                    <h2>Meet Dr. Lane</h2>
+                    <div class="doctor-bio">
+                        <p>Dr. Lane is a proud graduate of Loma Linda School of Dentistry, receiving his DDS as well as his Master's degree in Orthodontics and Dentofacial Orthopedics.</p>
+                        <p>For over 15 years Dr. Lane has never lost his passion for creating beautiful smiles, offering each patient affordable, personalized, and precise Orthodontic treatment.</p>
+                        <p>When not in the office, you can usually find Dr. Lane at the beach with his family. He is known as a perfectionist with a witty sense of humor. There is rarely a dull moment when Dr. Lane is around!</p>
+                    </div>
+                </div>
+                <div class="doctor-image">
+                    <img src="images/lane.jpg" alt="Dr Lane">
+                    <div class="image-decoration"></div>
+                </div>
             </div>
-
         </div>
     </section>
 
-     <!-- SERVICES SECTION -->
-     <section id="services" class="treatments section section-light">
-        <div class="container">
-
-            <!-- Header -->
-            <div class="section-header">
-                <h2>We do more than Just straighten teeth</h2>
-                <p>We believe maintaining overall health begins with oral health, therefore we are proud to offer the following services:</p>
-            </div>
-
-            <!-- Treatment Cards Container -->
-            <div class="treatment-cards">
-
-                <!-- Treatment Card 1 -->
-                <div class="treatment-card card card-hover">
-                    <img src="images/braces.png" alt="Traditional Braces">
-                    <div class="card-content">
-                        <h3>???</h3>
-                        <p>Comprehensive orthodontic treatment for adults and children</p>
-                    </div>
-                </div>
-                
-                <!-- Treatment Card 2-->
-                <div class="treatment-card card card-hover">
-                    <img src="images/aligners.png" alt="Clear Aligners">
-                    <div class="card-content">
-                        <h3>???</h3>
-                        <p>In house Panoramic and Cephalometric X-Rays</p>
-                    </div>
-                </div>
-
-                <!-- Treatment Card 3-->
-                <div class="treatment-card card card-hover">
-                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
-                    <div class="card-content">
-                        <h3>???</h3>
-                        <p>Custom fit Sports guards and Night guards</p>
-                    </div>
-                </div>
-
-                <!-- Treatment Card 3-->
-                <div class="treatment-card card card-hover">
-                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
-                    <div class="card-content">
-                        <h3>???</h3>
-                        <p>TMJ treatment</p>
-                    </div>
-                </div>
-
-                <!-- Treatment Card 3-->
-                <div class="treatment-card card card-hover">
-                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
-                    <div class="card-content">
-                        <h3>???</h3>
-                        <p>In office teeth cleanings and exams</p>
-                    </div>
-                </div>
-                
-                <!-- Treatment Card 3-->
-                <div class="treatment-card card card-hover">
-                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
-                    <div class="card-content">
-                        <h3>???</h3>
-                        <p>At home teeth whitening kits</p>
-                    </div>
-                </div>
-                
-                <!-- Treatment Card 3-->
-                <div class="treatment-card card card-hover">
-                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
-                    <div class="card-content">
-                        <h3>???</h3>
-                        <p>Hawley and Lower Fixed retainers</p>
-                    </div>
-                </div>
-                
-                <!-- Treatment Card 3-->
-                <div class="treatment-card card card-hover">
-                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
-                    <div class="card-content">
-                        <h3>???</h3>
-                        <p>Clear brackets and Aligners</p>
-                    </div>
-                </div>
-                
-                <!-- Treatment Card 3-->
-                <div class="treatment-card card card-hover">
-                    <img src="images/accelerated.jpg" alt="Accelerated Orthodontics">
-                    <div class="card-content">
-                        <h3>???</h3>
-                        <p>Complimentary Consultationst</p>
-                    </div>
-                </div>
-
-                
-
-            </div>
-
+    <!-- SERVICES SECTION -->
+<section id="services" class="treatments section">
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+            <h2>We do more than Just straighten teeth</h2>
+            <p>We believe maintaining overall health begins with oral health, therefore we are proud to offer the following services:</p>
         </div>
-    </section>
 
-
-    <!-- WHY CHOOSE US SECTION -->
-    <section id="about" class="why-choose-us section section-dark">
-        <div class="container">
-
-            <!-- Header -->
-            <div class="section-header">
-                <h2>Don't let finances keep you from your dream smile</h2>
-                <p>We offer interest free payment options!
-
-                    We also accept most PPO insurance plans
-                    Including:</p>
+        <!-- Treatment Cards Container -->
+        <div class="treatment-cards">
+            <!-- Treatment Card 1 -->
+            <div class="treatment-card card card-hover">
+                <img src="images/comp.png" alt="Comprehensive Orthodontics">
+                <div class="card-content">
+                    <h3>Comprehensive Orthodontics</h3>
+                    <p>Comprehensive orthodontic treatment for adults and children</p>
+                </div>
             </div>
-
-            <!-- Features Container -->
-            <div class="features">
-                <div class="feature card">
-                    <p>Delta Dental</p>
-                </div>
-                <div class="feature card">
-                    <p>Aetnal</p>
-                </div>
-                <div class="feature card">
-                    <p>Metlife</p>
-                </div>
-                <div class="feature card">
-                    <p>United Healthcare</p>
-                </div>
-                <div class="feature card">
-                    <p>United Concordia</p>
-                </div>
-                <div class="feature card">
-                    <p>UFCW</p>
-                </div>
-                <div class="feature card">
-                    <p>Tricare Plans</p>
-                </div>
-                <div class="feature card">
-                    <p>Cigna</p>
-                </div>
-                <div class="feature card">
-                    <p>Principal</p>
-                </div>
-                <div class="feature card">
-                    <p>Guardian</p>
-                </div>
-                <div class="feature card">
-                    <p>Risk Management</p>
-                </div>
-                <div class="feature card">
-                    <p>Anthem Blue Cross/ Blue Shield</p>
+            
+            <!-- Treatment Card 2-->
+            <div class="treatment-card card card-hover">
+                <img src="images/diagnostic.png" alt="Diagnostic Imaging">
+                <div class="card-content">
+                    <h3>Diagnostic Imaging</h3>
+                    <p>In house Panoramic and Cephalometric X-Rays</p>
                 </div>
             </div>
 
+            <!-- Treatment Card 3-->
+            <div class="treatment-card card card-hover">
+                <img src="images/guard.png" alt="Sports Guards">
+                <div class="card-content">
+                    <h3>Custom Guards</h3>
+                    <p>Custom fit Sports guards and Night guards</p>
+                </div>
+            </div>
+
+            <!-- Treatment Card 4-->
+            <div class="treatment-card card card-hover">
+                <img src="images/tmj.png" alt="TMJ Treatment">
+                <div class="card-content">
+                    <h3>TMJ Treatment</h3>
+                    <p>TMJ treatment</p>
+                </div>
+            </div>
+
+            <!-- Treatment Card 5-->
+            <div class="treatment-card card card-hover">
+                <img src="images/cleaning.png" alt="Teeth Cleaning">
+                <div class="card-content">
+                    <h3>Dental Hygiene</h3>
+                    <p>In office teeth cleanings and exams</p>
+                </div>
+            </div>
+            
+            <!-- Treatment Card 6-->
+            <div class="treatment-card card card-hover">
+                <img src="images/whitening.png" alt="Teeth Whitening">
+                <div class="card-content">
+                    <h3>Teeth Whitening</h3>
+                    <p>At home teeth whitening kits</p>
+                </div>
+            </div>
+            
+            <!-- Treatment Card 7-->
+            <div class="treatment-card card card-hover">
+                <img src="images/retainers.png" alt="Retainers">
+                <div class="card-content">
+                    <h3>Retainers</h3>
+                    <p>Hawley and Lower Fixed retainers</p>
+                </div>
+            </div>
+            
+            <!-- Treatment Card 8-->
+            <div class="treatment-card card card-hover">
+                <img src="images/clear.png" alt="Clear Brackets">
+                <div class="card-content">
+                    <h3>Aesthetic Options</h3>
+                    <p>Clear brackets and Aligners</p>
+                </div>
+            </div>
+            
+            <!-- Treatment Card 9-->
+            <div class="treatment-card card card-hover">
+                <img src="images/consultation.png" alt="Consultation">
+                <div class="card-content">
+                    <h3>Free Consultations</h3>
+                    <p>Complimentary Consultations</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+<!-- INSURANCE & PAYMENT SECTION -->
+<section id="about" class="insurance-payment-section section">
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+            <h2>Don't let finances keep you from your dream smile</h2>
+            <p>We offer interest free payment options! We also accept most PPO insurance plans including:</p>
+        </div>
+
+        <!-- Features Container -->
+        <div class="features">
+            <div class="feature card">
+                <p>Delta Dental</p>
+            </div>
+            <div class="feature card">
+                <p>Aetna</p> <!-- Fixed typo: was "Aetnal" -->
+            </div>
+            <div class="feature card">
+                <p>Metlife</p>
+            </div>
+            <div class="feature card">
+                <p>United Healthcare</p>
+            </div>
+            <div class="feature card">
+                <p>United Concordia</p>
+            </div>
+            <div class="feature card">
+                <p>UFCW</p>
+            </div>
+            <div class="feature card">
+                <p>Tricare Plans</p>
+            </div>
+            <div class="feature card">
+                <p>Cigna</p>
+            </div>
+            <div class="feature card">
+                <p>Principal</p>
+            </div>
+            <div class="feature card">
+                <p>Guardian</p>
+            </div>
+            <div class="feature card">
+                <p>Risk Management</p>
+            </div>
+            <div class="feature card">
+                <p>Anthem Blue Cross/ Blue Shield</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- TESTIMONIALS -->
-    <section id="testimonials" class="testimonials section section-light">
-        <div class="container">
+    <!-- <section id="testimonials" class="testimonials section section-light">
+        <div class="container"> -->
 
             <!-- Testimonial Header-->
-            <div class="section-header">
+            <!-- <div class="section-header">
                 <h2>What Our Patients Say</h2>
                 <p>Don't just take our word for it - hear from our satisfied patients.</p>
-            </div>
+            </div> -->
 
             <!-- Testimonials Container-->
-            <div class="testimonial-cards">
+            <!-- <div class="testimonial-cards"> -->
 
                 <!-- Testimonial 1-->
-                <div class="testimonial-card card">
+                <!-- <div class="testimonial-card card">
                     <div class="stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
                     <p class="quote">"The entire staff is friendly and professional. My daughter's teeth look amazing after treatment!"</p>
                     <p class="patient-name">- Sarah Johnson</p>
-                </div>
+                </div> -->
 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card card">
+                <!-- <div class="testimonial-card card">
                     <div class="stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
                     <p class="quote">"I was nervous about getting braces as an adult, but Dr. Lane made the process easy and comfortable."</p>
                     <p class="patient-name">- Michael Chen</p>
-                </div>
+                </div> -->
                 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-card card">
+                <!-- <div class="testimonial-card card">
                     <div class="stars">
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
@@ -391,69 +388,89 @@
             </div>
 
         </div>
-    </section>
-    
-    <section id="contact" class="cta section">
-        <div class="container">
+    </section> -->
 
-            <!-- Contact Header-->
-            <div class="section-header">
-                <h2>Ready to Transform Your Smile?</h2>
-                <p>Schedule your complimentary consultation today and take the first step towards the smile you've always wanted.</p>
-            </div>
-            <!-- CTA Buttons Container-->
-            <div class="cta-buttons btn-container">
-
-                <!-- Lightbox Appointment Form Button -->
-                <script src="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script>
-                <script type="text/javascript">
-                    var JFL_201747138890158 = new JotformFeedback({
-                        formId: '201747138890158',
-                        base: 'https://form.jotform.com/',
-                        windowTitle: 'Appointment Request Form',
-                        backgroundColor: '#1a56db',
-                        fontColor: '#FFFFFF',
-                        type: 'false',
-                        height: 500,
-                        width: 700,
-                        openOnLoad: false
-                    });
-                </script>
-                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-                <script>
-                    window.jotformEmbedHandler("iframe[id='201747138890158']", "https://form.jotform.com/")
-                </script>
-
-                <!-- Lightbox Payment Form Button -->
-                <script src="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script>
-                <script type="text/javascript">
-                    var JFL_202316251833144 = new JotformFeedback({
-                        formId: '202316251833144',
-                        base: 'https://form.jotform.com/',
-                        windowTitle: 'Lane Orthodontics Payment Form',
-                        backgroundColor: '#4a90e2',
-                        fontColor: '#FFFFFF',
-                        type: '1',
-                        height: 500,
-                        width: 700,
-                        openOnLoad: false
-                    });
-                </script>
-                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-                <script>
-                    window.jotformEmbedHandler("iframe[id='202316251833144']", "https://form.jotform.com/")
-                </script>
-                
-                <!-- Request Appointment Button -->
-                <a class="btn btn-primary lightbox-201747138890158">Request Appointment</a>
-                
-                <!-- Call Us Button -->
-                <a href="tel:9097991825" class="btn btn-secondary">Call Us</a>
-
-            </div>
-
+    <!-- LOCATION SECTION -->
+<!-- LOCATION SECTION -->
+<section id="location" class="location-section section">
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+            <h2>Find Us</h2>
+            <p>Visit our office for exceptional orthodontic care in a comfortable environment</p>
         </div>
-    </section>
+
+        <div class="location-content">
+            <!-- Location Details -->
+            <div class="location-details">
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3>Palm Desert Office</h3>
+                    <address>
+                        <p>73-899 Highway 111<br>
+                        Palm Desert, CA 92260</p>
+                    </address>
+                    <div class="office-hours">
+                        <h4>Office Hours</h4>
+                        <p>Monday - Friday: 9am - 5pm</p>
+                    </div>
+                    <a href="tel:9097991825" class="btn btn-primary location-btn">
+                        <i class="fa-solid fa-phone"></i> Call Us
+                    </a>
+                    <a href="https://maps.app.goo.gl/JZBwBRFNnKB5Hx4Y9" target="_blank" class="btn btn-secondary location-btn">
+                        <i class="fa-solid fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="map-container">
+                <div class="google-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.258166444042!2d-116.38245752391635!3d33.7253313371956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80db03d0accb4c55%3A0xe14ea191e88c3d62!2s73899%20CA-111%2C%20Palm%20Desert%2C%20CA%2092260!5e0!3m2!1sen!2sus!4v1713984129037!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+<!-- CONTACT CTA SECTION -->
+<section id="contact" class="contact-cta-section section">
+    <div class="container">
+        <!-- Contact Header-->
+        <div class="section-header">
+            <h2>Ready to Transform Your Smile?</h2>
+            <p>Schedule your complimentary consultation today and take the first step towards the smile you've always wanted.</p>
+        </div>
+        
+        <!-- CTA Buttons Container-->
+        <div class="contact-cta-buttons btn-container">
+            <!-- Request Appointment Button -->
+            <a class="btn btn-primary lightbox-201747138890158">Request Appointment</a>
+            
+            <!-- Call Us Button -->
+            <a href="tel:9097991825" class="btn btn-secondary">Call Us</a>
+        </div>
+    </div>
+
+    <div class="footer-landscape">
+        <div class="footer-cta-img"></div>
+    </div>
+    
+    <!-- Desert Footer - now directly adjacent to main footer-->
+    <!-- <div class="desert-landscape-">
+        <div class="desert-footer-img"></div>
+    </div> -->
+</section>
 
     <!-- FOOTER -->
     <footer class="footer">
