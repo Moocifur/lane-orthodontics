@@ -19,6 +19,10 @@
     --breakpoint-sm: 640px;
     --breakpoint-md: 768px;
     --breakpoint-lg: 1024px;
+    /* Fonts */
+    --pd-font: 'Shadows Into Light Two', cursive;
+    --ll-font: 'Spicy Rice', cursive;
+    --base-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
     /* Colors - Base Theme */
     --primary-color: #1a56db;
@@ -59,6 +63,16 @@ body.location-palm-desert {
     --text-light: var(--pd-text-light);
     --footer-bg: var(--pd-footer-bg);
     --footer-text: var(--pd-footer-text);
+    font-family: var(--base-font);
+}
+
+/* Palm Desert headings */
+body.location-palm-desert h1,
+body.location-palm-desert h2,
+body.location-palm-desert h3,
+body.location-palm-desert .section-header h2,
+body.location-palm-desert .footer-logo {
+    font-family: var(--pd-font);
 }
 
 /* Loma Linda theme */
@@ -70,6 +84,16 @@ body.location-loma-linda {
     --text-light: var(--ll-text-light);
     --footer-bg: var(--ll-footer-bg);
     --footer-text: var(--ll-footer-text);
+    font-family: var(--base-font);
+}
+
+/* Loma Linda headings */
+body.location-loma-linda h1,
+body.location-loma-linda h2,
+body.location-loma-linda h3,
+body.location-loma-linda .section-header h2,
+body.location-loma-linda .footer-logo {
+    font-family: var(--ll-font);
 }
 
 /* -- RESET STYLING -- */
