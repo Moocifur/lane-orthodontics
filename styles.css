@@ -642,6 +642,18 @@ body.location-loma-linda .hero-content {
     margin-bottom: -74px;
 }
 
+@media (max-width: 576px) {
+    .landscape {
+        margin-bottom: -95px;
+    }
+    
+    body.location-loma-linda .landscape {
+        margin-bottom: -25px;
+    }
+}
+
+
+
 .beach-cta-img {
     display: block;
     width: 100%;
@@ -2071,6 +2083,12 @@ body.location-palm-desert .beach-cta-img {
 
 .footer-landscape {
     margin-bottom: -30px;
+}
+
+@media (max-width: 576px) {
+    .footer-landscape {
+        margin-bottom: -15px;
+    }
 }
 
 .footer-cta-img {
