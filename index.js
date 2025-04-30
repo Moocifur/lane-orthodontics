@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleOptions = document.querySelectorAll('.toggle-option');
     // Get all content elements that change based on location
     const locationContent = document.querySelectorAll('[data-location-content="true"]');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.treatment-tab');
 
 
     // Add click event to toggle Buttons --
@@ -101,6 +103,22 @@ document.addEventListener('DOMContentLoaded', function() {
             navContainer.classList.remove('active');
             hamburger.setAttribute('aria-expanded', 'false');
         }
+    });
+
+    // Add click event listeners to tab buttons
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Get the tab to activate
+            const tabToActivate = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and tabs
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(tab => tab.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding tab
+            button.classList.add('active');
+            document.querySelector(`.treatment-tab[data-tab="${tabToActivate}"]`).classList.add('active');
+        });
     });
 });
 
