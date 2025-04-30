@@ -45,7 +45,7 @@
     --ll-secondary: #87CEEB;     /* Sky blue */
     --ll-text: #333333;
     --ll-text-light: #555555;
-    --ll-footer-bg: #0c2d6b;
+    --ll-footer-bg: #d3aa69;
     --ll-footer-text: #ffffff;
 }
 
@@ -639,7 +639,7 @@ body.location-loma-linda .hero-content {
 
 /* bottom images */
 .landscape {
-    margin-bottom: -90px;
+    margin-bottom: -74px;
 }
 
 .beach-cta-img {
@@ -2243,7 +2243,7 @@ body.location-palm-desert .desert-cta-img {
 }
 
 .contact-method:hover .contact-icon {
-    background-color: var(--primary-color);
+    background-color: #aa8144;
 }
 
 .footer-links {
