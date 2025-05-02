@@ -663,7 +663,7 @@ body.location-loma-linda .hero-content {
 
 /* bottom images */
 .landscape {
-    margin-bottom: -74px;
+    margin-bottom: -90px;
 }
 
 @media (max-width: 576px) {
@@ -723,12 +723,12 @@ body.location-palm-desert .beach-cta-img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     position: relative;
     z-index: 2;
 }
 
-.circular-btn {
+/* .circular-btn {
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -753,6 +753,50 @@ body.location-palm-desert .beach-cta-img {
     transform: translateY(-5px) scale(1.03);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
     border-color: rgba(255, 255, 255, 0.5);
+} */
+ 
+/* Simplified image-based button styling */
+.circular-btn-image {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.circular-btn-image img {
+    width: 250px;
+    height: 250px;
+    /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
+    transition: all 0.3s ease;
+}
+
+.circular-btn-image:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+.circular-btn-image:hover img {
+    /* box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25); */
+}
+
+/* Remove border-radius if images are already circular */
+/* .circular-btn-image img {
+    border-radius: 50%;
+} */
+
+/* Responsive adjustments for image buttons */
+@media (max-width: 767px) {
+    .circular-btn-image img {
+        width: 230px;
+        height: 230px;
+    }
+}
+
+@media (max-width: 500px) {
+    .circular-btn-image img {
+        width: 200px;
+        height: 200px;
+        gap: 0;
+    }
 }
 
 /* Desert Elements */
