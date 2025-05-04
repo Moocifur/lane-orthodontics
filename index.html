@@ -77,18 +77,28 @@
                 <!-- Nav Links -->
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#about-doctor">About Us</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#insurance-payment">Insurance</a></li>
+                    <li><a href="#location">Location</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
 
-                <!-- Button in Nav-->
-                <button class="btn btn-primary appointment-btn lightbox-201747138890158">
-                    <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
-                    Book Appointment
-                </button>
-                
+                <!-- Buttons Container -->
+                <div class="nav-buttons">
+                    <!-- Book Appointment Button -->
+                    <button class="btn btn-primary appointment-btn lightbox-201747138890158">
+                        <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
+                        Book Appointment
+                    </button>
+                    
+                    <!-- Make Payment Button - Using button element to match appointment button -->
+                    <button class="btn btn-secondary payment-btn">
+                        <span class="icon"><i class="fa-solid fa-credit-card"></i></span>
+                        Make Payment
+                    </button>
+                </div>
+
             </div>
 
         </div>
@@ -137,14 +147,6 @@
                 <!-- Call Us Button -->
                 <a href="tel:9097991825" class="btn btn-secondary">Call Us</a>
             </div>
-
-            <!-- <div class="hero-image">
-                <video autoplay muted loop playsinline poster="images/hero-fallback.jpg" class="hero-video">
-                    <source src="images/hero-vid.mp4" type="video/mp4">
-                    
-                    <img src="images/hero-fallback.jpg" alt="Happy patient with braces">
-                </video>
-            </div> -->
         </div>
 
         <div class="landscape">
@@ -152,62 +154,32 @@
         </div>
     </section>
 
-    <!-- CTA BUTTONS SECTION -->
-    <!-- <section class="sandy-actions" data-location-visibility="palm-desert">
+    <!-- SANDY ACTIONS SECTION -->
+    <section class="sandy-actions" data-location-visibility="palm-desert">
         <div class="container">
             <div class="action-buttons">
 
                 <div class="button-wrapper">
-                    <img src="images/rocks.png" alt="" class="desert-element cactus">
-                    <button class="circular-btn lightbox-201747138890158">
-                        Request an Appointment
-                    </button>
+                    <a href="#" class="circular-btn-image lightbox-201747138890158">
+                        <img src="images/2.png" alt="Request an Appointment">
+                    </a>
                 </div>
 
                 <div class="button-wrapper">
-                    <img src="images/cactus.png" alt="" class="desert-element succulent-left">
-                    <button class="circular-btn lightbox-201747138890158">
-                        Make a Payment Online
-                    </button>
+                    <a href="#" class="circular-btn-image lightbox-201747138890158">
+                        <img src="images/1.png" alt="Make a Payment Online">
+                    </a>
                 </div>
 
                 <div class="button-wrapper">
-                    <img src="images/succulent2.png" alt="" class="desert-element succulent-right">
-                    <button class="circular-btn lightbox-201747138890158">
-                        New Patient Paperwork
-                    </button>
+                    <a href="#" class="circular-btn-image lightbox-201747138890158">
+                        <img src="images/3.png" alt="New Patient Paperwork">
+                    </a>
                 </div>
 
             </div>
         </div>
-    </section> -->
-
-    <!-- SIMPLIFIED SANDY ACTIONS SECTION -->
-<section class="sandy-actions" data-location-visibility="palm-desert">
-    <div class="container">
-        <div class="action-buttons">
-
-            <div class="button-wrapper">
-                <a href="#" class="circular-btn-image lightbox-201747138890158">
-                    <img src="images/2.png" alt="Request an Appointment">
-                </a>
-            </div>
-
-            <div class="button-wrapper">
-                <a href="#" class="circular-btn-image lightbox-201747138890158">
-                    <img src="images/1.png" alt="Make a Payment Online">
-                </a>
-            </div>
-
-            <div class="button-wrapper">
-                <a href="#" class="circular-btn-image lightbox-201747138890158">
-                    <img src="images/3.png" alt="New Patient Paperwork">
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- DR. LANE SECTION -->
     <section id="about-doctor" class="doctor-profile section" data-location-visibility="palm-desert">
@@ -230,398 +202,219 @@
     </section>
 
     <!-- SERVICES SECTION WITH TABS -->
-<section id="services" class="treatments section" data-location-visibility="palm-desert">
-    <div class="container">
-        <!-- Header -->
-        <div class="section-header">
-            <h2>We do more than Just straighten teeth</h2>
-            <p>We believe maintaining overall health begins with oral health, therefore we are proud to offer the following services:</p>
-        </div>
-
-        <!-- Service Categories/Tabs -->
-        <div class="service-tabs">
-            <button class="tab-btn active" data-tab="orthodontics">Orthodontics</button>
-            <button class="tab-btn" data-tab="diagnostics">Diagnostics & Planning</button>
-            <button class="tab-btn" data-tab="supplementary">Supplementary Services</button>
-        </div>
-
-        <!-- Treatment Cards Container -->
-        <div class="treatment-tabs-container">
-            <!-- Orthodontics Tab -->
-            <div class="treatment-tab active" data-tab="orthodontics">
-                <div class="treatment-cards">
-                    <!-- Treatment Card 1 -->
-                    <div class="treatment-card card card-hover">
-                        <img src="images/comp.png" alt="Comprehensive Orthodontics">
-                        <div class="card-content">
-                            <h3>Comprehensive Orthodontics</h3>
-                            <p>Comprehensive orthodontic treatment for adults and children</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Treatment Card 8-->
-                    <div class="treatment-card card card-hover">
-                        <img src="images/clear.png" alt="Clear Brackets">
-                        <div class="card-content">
-                            <h3>Aesthetic Options</h3>
-                            <p>Clear brackets and Aligners</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="services" class="treatments section" data-location-visibility="palm-desert">
+        <div class="container">
+            <!-- Header -->
+            <div class="section-header">
+                <h2>We do more than Just straighten teeth</h2>
+                <p>We believe maintaining overall health begins with oral health, therefore we are proud to offer the following services:</p>
             </div>
 
-            <!-- Diagnostics Tab -->
-            <div class="treatment-tab" data-tab="diagnostics">
-                <div class="treatment-cards">
-                    <!-- Treatment Card 2-->
-                    <div class="treatment-card card card-hover">
-                        <img src="images/diagnostic.png" alt="Diagnostic Imaging">
-                        <div class="card-content">
-                            <h3>Diagnostic Imaging</h3>
-                            <p>In house Panoramic and Cephalometric X-Rays</p>
+            <!-- Service Categories/Tabs -->
+            <div class="service-tabs">
+                <button class="tab-btn active" data-tab="orthodontics">Orthodontics</button>
+                <button class="tab-btn" data-tab="diagnostics">Diagnostics & Planning</button>
+                <button class="tab-btn" data-tab="supplementary">Supplementary Services</button>
+            </div>
+
+            <!-- Treatment Cards Container -->
+            <div class="treatment-tabs-container">
+                <!-- Orthodontics Tab -->
+                <div class="treatment-tab active" data-tab="orthodontics">
+                    <div class="treatment-cards">
+                        <!-- Treatment Card 1 -->
+                        <div class="treatment-card card card-hover">
+                            <img src="images/comp.png" alt="Comprehensive Orthodontics">
+                            <div class="card-content">
+                                <h3>Comprehensive Orthodontics</h3>
+                                <p>Comprehensive orthodontic treatment for adults and children</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <!-- Treatment Card 9-->
-                    <div class="treatment-card card card-hover">
-                        <img src="images/consultation.png" alt="Consultation">
-                        <div class="card-content">
-                            <h3>Free Consultations</h3>
-                            <p>Complimentary Consultations</p>
+                        
+                        <!-- Treatment Card 8-->
+                        <div class="treatment-card card card-hover">
+                            <img src="images/clear.png" alt="Clear Brackets">
+                            <div class="card-content">
+                                <h3>Aesthetic Options</h3>
+                                <p>Clear brackets and Aligners</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Supplementary Services Tab -->
-            <div class="treatment-tab" data-tab="supplementary">
-                <div class="treatment-cards">
-                    <!-- Treatment Card 3-->
-                    <div class="treatment-card card card-hover">
-                        <img src="images/guard.png" alt="Sports Guards">
-                        <div class="card-content">
-                            <h3>Custom Guards</h3>
-                            <p>Custom fit Sports guards and Night guards</p>
+                <!-- Diagnostics Tab -->
+                <div class="treatment-tab" data-tab="diagnostics">
+                    <div class="treatment-cards">
+                        <!-- Treatment Card 2-->
+                        <div class="treatment-card card card-hover">
+                            <img src="images/diagnostic.png" alt="Diagnostic Imaging">
+                            <div class="card-content">
+                                <h3>Diagnostic Imaging</h3>
+                                <p>In house Panoramic and Cephalometric X-Rays</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <!-- Treatment Card 4-->
-                    <div class="treatment-card card card-hover">
-                        <img src="images/tmj.png" alt="TMJ Treatment">
-                        <div class="card-content">
-                            <h3>TMJ Treatment</h3>
-                            <p>TMJ treatment</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Treatment Card 6-->
-                    <div class="treatment-card card card-hover">
-                        <img src="images/whitening.png" alt="Teeth Whitening">
-                        <div class="card-content">
-                            <h3>Teeth Whitening</h3>
-                            <p>At home teeth whitening kits</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Treatment Card 7-->
-                    <div class="treatment-card card card-hover">
-                        <img src="images/retainers.png" alt="Retainers">
-                        <div class="card-content">
-                            <h3>Retainers</h3>
-                            <p>Hawley and Lower Fixed retainers</p>
+                        
+                        <!-- Treatment Card 9-->
+                        <div class="treatment-card card card-hover">
+                            <img src="images/consultation.png" alt="Consultation">
+                            <div class="card-content">
+                                <h3>Free Consultations</h3>
+                                <p>Complimentary Consultations</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-    <!-- SERVICES SECTION -->
-<!-- <section id="services" class="treatments section">
-    <div class="container">
-        <div class="section-header">
-            <h2>We do more than Just straighten teeth</h2>
-            <p>We believe maintaining overall health begins with oral health, therefore we are proud to offer the following services:</p>
-        </div>
-
-        <div class="treatment-cards">
-
-            <div class="treatment-card card card-hover">
-                <img src="images/comp.png" alt="Comprehensive Orthodontics">
-                <div class="card-content">
-                    <h3>Comprehensive Orthodontics</h3>
-                    <p>Comprehensive orthodontic treatment for adults and children</p>
-                </div>
-            </div>
-        
-            <div class="treatment-card card card-hover">
-                <img src="images/diagnostic.png" alt="Diagnostic Imaging">
-                <div class="card-content">
-                    <h3>Diagnostic Imaging</h3>
-                    <p>In house Panoramic and Cephalometric X-Rays</p>
-                </div>
-            </div>
-
-            <div class="treatment-card card card-hover">
-                <img src="images/guard.png" alt="Sports Guards">
-                <div class="card-content">
-                    <h3>Custom Guards</h3>
-                    <p>Custom fit Sports guards and Night guards</p>
-                </div>
-            </div>
-
-            <div class="treatment-card card card-hover">
-                <img src="images/tmj.png" alt="TMJ Treatment">
-                <div class="card-content">
-                    <h3>TMJ Treatment</h3>
-                    <p>TMJ treatment</p>
-                </div>
-            </div>
-            
-            <div class="treatment-card card card-hover">
-                <img src="images/whitening.png" alt="Teeth Whitening">
-                <div class="card-content">
-                    <h3>Teeth Whitening</h3>
-                    <p>At home teeth whitening kits</p>
-                </div>
-            </div>
-            
-            <div class="treatment-card card card-hover">
-                <img src="images/retainers.png" alt="Retainers">
-                <div class="card-content">
-                    <h3>Retainers</h3>
-                    <p>Hawley and Lower Fixed retainers</p>
-                </div>
-            </div>
-            
-            <div class="treatment-card card card-hover">
-                <img src="images/clear.png" alt="Clear Brackets">
-                <div class="card-content">
-                    <h3>Aesthetic Options</h3>
-                    <p>Clear brackets and Aligners</p>
-                </div>
-            </div>
-            
-            <div class="treatment-card card card-hover">
-                <img src="images/consultation.png" alt="Consultation">
-                <div class="card-content">
-                    <h3>Free Consultations</h3>
-                    <p>Complimentary Consultations</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<!-- INSURANCE & PAYMENT SECTION - WITH SCROLL TO CONTACT -->
-<section id="about" class="insurance-payment-section section" data-location-visibility="palm-desert">
-    <div class="container">
-        <!-- Header -->
-        <div class="section-header">
-            <h2>Don't let finances keep you from your dream smile</h2>
-            <p>We offer interest-free payment options and accept most PPO insurance plans</p>
-        </div>
-
-        <!-- Insurance Info Card -->
-        <div class="insurance-info-card">
-            <div class="insurance-content">
-                <div class="insurance-icon">
-                    <i class="fa-solid fa-shield-heart"></i>
-                </div>
-                <h3>Insurance & Financial Options</h3>
-                <p>We work with most major PPO insurance providers including Delta Dental, Aetna, Metlife, and many others. Our team will help maximize your insurance benefits and find a payment plan that works for your budget.</p>
-                <div class="insurance-actions">
-                    <a href="#contact" class="btn btn-primary scroll-to-contact">
-                        <i class="fa-solid fa-message"></i> Contact About Insurance
-                    </a>
-                    <a class="btn btn-secondary lightbox-201747138890158">
-                        <i class="fa-regular fa-calendar-days"></i> Schedule Consultation
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- INSURANCE & PAYMENT SECTION -->
-<!-- <section id="about" class="insurance-payment-section section">
-    <div class="container">
-        
-        <div class="section-header">
-            <h2>Don't let finances keep you from your dream smile</h2>
-            <p>We offer interest free payment options! We also accept most PPO insurance plans including:</p>
-        </div>
-
-        
-        <div class="features">
-            <div class="feature card">
-                <p>Delta Dental</p>
-            </div>
-            <div class="feature card">
-                <p>Aetna</p> 
-            </div>
-            <div class="feature card">
-                <p>Metlife</p>
-            </div>
-            <div class="feature card">
-                <p>United Healthcare</p>
-            </div>
-            <div class="feature card">
-                <p>United Concordia</p>
-            </div>
-            <div class="feature card">
-                <p>UFCW</p>
-            </div>
-            <div class="feature card">
-                <p>Tricare Plans</p>
-            </div>
-            <div class="feature card">
-                <p>Cigna</p>
-            </div>
-            <div class="feature card">
-                <p>Principal</p>
-            </div>
-            <div class="feature card">
-                <p>Guardian</p>
-            </div>
-            <div class="feature card">
-                <p>Risk Management</p>
-            </div>
-            <div class="feature card">
-                <p>Anthem Blue Cross/ Blue Shield</p>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-    <!-- TESTIMONIALS -->
-    <!-- <section id="testimonials" class="testimonials section section-light">
-        <div class="container"> -->
-
-            <!-- Testimonial Header-->
-            <!-- <div class="section-header">
-                <h2>What Our Patients Say</h2>
-                <p>Don't just take our word for it - hear from our satisfied patients.</p>
-            </div> -->
-
-            <!-- Testimonials Container-->
-            <!-- <div class="testimonial-cards"> -->
-
-                <!-- Testimonial 1-->
-                <!-- <div class="testimonial-card card">
-                    <div class="stars">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                <!-- Supplementary Services Tab -->
+                <div class="treatment-tab" data-tab="supplementary">
+                    <div class="treatment-cards">
+                        <!-- Treatment Card 3-->
+                        <div class="treatment-card card card-hover">
+                            <img src="images/guard.png" alt="Sports Guards">
+                            <div class="card-content">
+                                <h3>Custom Guards</h3>
+                                <p>Custom fit Sports guards and Night guards</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Treatment Card 4-->
+                        <div class="treatment-card card card-hover">
+                            <img src="images/tmj.png" alt="TMJ Treatment">
+                            <div class="card-content">
+                                <h3>TMJ Treatment</h3>
+                                <p>TMJ treatment</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Treatment Card 6-->
+                        <div class="treatment-card card card-hover">
+                            <img src="images/whitening.png" alt="Teeth Whitening">
+                            <div class="card-content">
+                                <h3>Teeth Whitening</h3>
+                                <p>At home teeth whitening kits</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Treatment Card 7-->
+                        <div class="treatment-card card card-hover">
+                            <img src="images/retainers.png" alt="Retainers">
+                            <div class="card-content">
+                                <h3>Retainers</h3>
+                                <p>Hawley and Lower Fixed retainers</p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="quote">"The entire staff is friendly and professional. My daughter's teeth look amazing after treatment!"</p>
-                    <p class="patient-name">- Sarah Johnson</p>
-                </div> -->
-
-                <!-- Testimonial 2 -->
-                <!-- <div class="testimonial-card card">
-                    <div class="stars">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <p class="quote">"I was nervous about getting braces as an adult, but Dr. Lane made the process easy and comfortable."</p>
-                    <p class="patient-name">- Michael Chen</p>
-                </div> -->
-                
-                <!-- Testimonial 3 -->
-                <!-- <div class="testimonial-card card">
-                    <div class="stars">
-                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                    <p class="quote">"The clear aligners were perfect for my lifestyle. I'm so happy with my new smile!"</p>
-                    <p class="patient-name">- Emma Rodriguez</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- INSURANCE & PAYMENT SECTION -->
+    <section id="insurance-payment" class="insurance-payment-section section" data-location-visibility="palm-desert">
+        <div class="container">
+            <!-- Header -->
+            <div class="section-header">
+                <h2>Don't let finances keep you from your dream smile</h2>
+                <p>We offer interest-free payment options and accept most PPO insurance plans</p>
             </div>
 
+            <!-- Insurance Info Card -->
+            <div class="insurance-info-card">
+                <div class="insurance-content">
+                    <div class="insurance-icon">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3>Insurance & Financial Options</h3>
+                    <p>We work with most major PPO insurance providers including Delta Dental, Aetna, Metlife, and many others. Our team will help maximize your insurance benefits and find a payment plan that works for your budget.</p>
+                    <div class="insurance-actions">
+                        <a href="#contact" class="btn btn-primary scroll-to-contact">
+                            <i class="fa-solid fa-message"></i> Contact About Insurance
+                        </a>
+                        <a class="btn btn-secondary lightbox-201747138890158">
+                            <i class="fa-regular fa-calendar-days"></i> Schedule Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- LOCATION SECTION -->
-<!-- LOCATION SECTION -->
-<section id="location" class="location-section section" data-location-visibility="palm-desert">
-    <div class="container">
-        <!-- Header -->
-        <div class="section-header">
-            <h2>Find Us</h2>
-            <p>Visit our office for exceptional orthodontic care in a comfortable environment</p>
-        </div>
-
-        <div class="location-content">
-            <!-- Location Details -->
-            <div class="location-details">
-                <div class="location-card">
-                    <div class="location-icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <h3>Palm Desert Office</h3>
-                    <address>
-                        <p>73-899 Highway 111<br>
-                        Palm Desert, CA 92260</p>
-                    </address>
-                    <div class="office-hours">
-                        <h4>Office Hours</h4>
-                        <p>Monday - Friday: 9am - 5pm</p>
-                    </div>
-                    <a href="tel:9097991825" class="btn btn-primary location-btn">
-                        <i class="fa-solid fa-phone"></i> Call Us
-                    </a>
-                    <a href="https://maps.app.goo.gl/JZBwBRFNnKB5Hx4Y9" target="_blank" class="btn btn-secondary location-btn">
-                        <i class="fa-solid fa-directions"></i> Get Directions
-                    </a>
-                </div>
+    <section id="location" class="location-section section" data-location-visibility="palm-desert">
+        <div class="container">
+            <!-- Header -->
+            <div class="section-header">
+                <h2>Find Us</h2>
+                <p>Visit our office for exceptional orthodontic care in a comfortable environment</p>
             </div>
 
-            <!-- Google Map -->
-            <div class="map-container">
-                <div class="google-map">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.258166444042!2d-116.38245752391635!3d33.7253313371956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80db03d0accb4c55%3A0xe14ea191e88c3d62!2s73899%20CA-111%2C%20Palm%20Desert%2C%20CA%2092260!5e0!3m2!1sen!2sus!4v1713984129037!5m2!1sen!2sus" 
-                        width="100%" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+            <div class="location-content">
+                <!-- Location Details -->
+                <div class="location-details">
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3>Palm Desert Office</h3>
+                        <address>
+                            <p>73-899 Highway 111<br>
+                            Palm Desert, CA 92260</p>
+                        </address>
+                        <div class="office-hours">
+                            <h4>Office Hours</h4>
+                            <p>Monday - Friday: 9am - 5pm</p>
+                        </div>
+                        <a href="tel:9097991825" class="btn btn-primary location-btn">
+                            <i class="fa-solid fa-phone"></i> Call Us
+                        </a>
+                        <a href="https://maps.app.goo.gl/JZBwBRFNnKB5Hx4Y9" target="_blank" class="btn btn-secondary location-btn">
+                            <i class="fa-solid fa-directions"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="map-container">
+                    <div class="google-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.258166444042!2d-116.38245752391635!3d33.7253313371956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80db03d0accb4c55%3A0xe14ea191e88c3d62!2s73899%20CA-111%2C%20Palm%20Desert%2C%20CA%2092260!5e0!3m2!1sen!2sus!4v1713984129037!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-    
-<!-- CONTACT CTA SECTION -->
-<section id="contact" class="contact-cta-section section" data-location-visibility="palm-desert">
-    <div class="container">
-        <!-- Contact Header-->
-        <div class="section-header">
-            <h2>Ready to Transform Your Smile?</h2>
-            <p>Schedule your complimentary consultation today and take the first step towards the smile you've always wanted.</p>
+    </section>
+        
+    <!-- CONTACT CTA SECTION -->
+    <section id="contact" class="contact-cta-section section" data-location-visibility="palm-desert">
+        <div class="container">
+            <!-- Contact Header-->
+            <div class="section-header">
+                <h2>Ready to Transform Your Smile?</h2>
+                <p>Schedule your complimentary consultation today and take the first step towards the smile you've always wanted.</p>
+            </div>
+            
+            <!-- CTA Buttons Container-->
+            <div class="contact-cta-buttons btn-container">
+                <!-- Request Appointment Button -->
+                <a class="btn btn-primary lightbox-201747138890158">Request Appointment</a>
+                
+                <!-- Call Us Button -->
+                <a href="tel:9097991825" class="btn btn-secondary">Call Us</a>
+            </div>
+        </div>
+
+        <div class="footer-landscape">
+            <div class="footer-cta-img"></div>
         </div>
         
-        <!-- CTA Buttons Container-->
-        <div class="contact-cta-buttons btn-container">
-            <!-- Request Appointment Button -->
-            <a class="btn btn-primary lightbox-201747138890158">Request Appointment</a>
-            
-            <!-- Call Us Button -->
-            <a href="tel:9097991825" class="btn btn-secondary">Call Us</a>
-        </div>
-    </div>
-
-    <div class="footer-landscape">
-        <div class="footer-cta-img"></div>
-    </div>
-    
-    <!-- Desert Footer - now directly adjacent to main footer-->
-    <!-- <div class="desert-landscape-">
-        <div class="desert-footer-img"></div>
-    </div> -->
-</section>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -661,9 +454,10 @@
                         <h3>Quick Links</h3>
                         <ul>
                             <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#about-doctor">About Us</a></li>
                             <li><a href="#services">Services</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#insurance-payment">Insurance</a></li>
+                            <li><a href="#location">Location</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>

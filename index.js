@@ -66,13 +66,54 @@ document.addEventListener('DOMContentLoaded', function() {
                 section.style.display = 'none';
             }
         });
+
+        updateNavigation(selectedLocation);
     }
 
-    // REMOVED: Check for saved location preference
+    function updateNavigation(selectedLocation) {
+        // Get all navigation links
+        const navContainer = document.querySelector('.nav-container');
+        const navItemsList = document.querySelector('.nav-links');
+        
+        // Store the original Palm Desert navigation if we haven't yet
+        if (!window.palmDesertNavHTML && selectedLocation === 'palm-desert') {
+            window.palmDesertNavHTML = navItemsList.innerHTML;
+        }
+        
+        if (selectedLocation === 'loma-linda') {
+            // Make sure the mobile menu is properly styled
+            navContainer.classList.add('loma-linda-nav');
+            
+            // Custom links for Loma Linda
+            navItemsList.innerHTML = `
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About The Wire Wagon</a></li>
+            `;
+        } else {
+            // Reset to Palm Desert navigation
+            navContainer.classList.remove('loma-linda-nav');
+            
+            // Restore the original Palm Desert navigation
+            if (window.palmDesertNavHTML) {
+                navItemsList.innerHTML = window.palmDesertNavHTML;
+            }
+        }
+        
+        // Re-attach event listeners to navigation links
+        const updatedNavLinks = document.querySelectorAll('.nav-links a');
+        updatedNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger-menu');
+                hamburger.classList.remove('active');
+                navContainer.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
     // Default to Palm Desert (no checking localStorage)
     updateLocationContent('palm-desert');
 
-    // Rest of your code remains the same...
     // Toggle menu on hamburger icon is clicked --
     hamburger.addEventListener('click', function() {
         // Toggle the 'active' class on the hamburger icon (transforms to X)
