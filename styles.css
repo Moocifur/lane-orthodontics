@@ -107,6 +107,7 @@ html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+    overscroll-behavior-x: none;
 }
 
 body {
@@ -117,6 +118,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    overscroll-behavior-x: none;
 }
 
 /* Fix for body when mobile menu is open */
@@ -905,7 +907,7 @@ body.location-palm-desert .beach-cta-img {
     z-index: 3;
 }
 
-.sandy-actions .cactus {
+/* .sandy-actions .cactus {
     width: 150px;
     height: auto;
     left: -80px;
@@ -925,7 +927,7 @@ body.location-palm-desert .beach-cta-img {
     height: auto;
     left: -70px;
     bottom: -25px;
-}
+} */
 
 /* -- DOCTOR PROFILE SECTION -- */
 .doctor-profile {
@@ -975,7 +977,7 @@ body.location-palm-desert .beach-cta-img {
 .doctor-profile .container::before {
     content: '';
     position: absolute;
-    right: -60px;
+    /* right: -60px; */
     top: 50px;
     width: 180px;
     height: 180px;
