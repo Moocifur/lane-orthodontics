@@ -274,6 +274,18 @@ body.location-loma-linda .top-bar {
     max-width: 200px;
 }
 
+/* Add this to your styles.css file */
+.phone-link {
+    color: white; /* Same color as the rest of the top bar text */
+    text-decoration: none; /* Remove underline */
+    transition: var(--transition-default);
+}
+
+.phone-link:hover {
+    color: rgba(255, 255, 255, 0.8); /* Slight transparency on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
 .address-link {
     color: white; /* Same color as the rest of the top bar text */
     text-decoration: none; /* Remove underline */
@@ -350,7 +362,7 @@ body.location-loma-linda .top-bar {
     position: sticky;
     top: 0;
     z-index: 1000;
-    z-index: 5;
+    
     width: 100%;
     background-color: var(--white);
     padding: 12px 0;
