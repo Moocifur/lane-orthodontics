@@ -290,6 +290,8 @@ body.location-loma-linda .top-bar {
     display: flex;
     align-items: center;
     padding: 4px 0;
+    color: white; /* Same color as the rest of the top bar text */
+    text-decoration: none;
 }
 
 /* Location Toggle */
