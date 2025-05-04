@@ -13,6 +13,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.treatment-tab');
     
+    // Add logo click functionality to scroll to top
+    const logo = document.querySelector('.logo-img');
+    if (logo) {
+        logo.style.cursor = 'pointer'; // Change cursor to pointer to indicate it's clickable
+        logo.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Add smooth scrolling effect
+            });
+        });
+    }
+
     // Add click event to toggle Buttons --
     toggleOptions.forEach(option => {
         option.addEventListener('click', function() {
@@ -28,8 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Update content visibility
             updateLocationContent(selectedLocation);
-            
-            // REMOVED: localStorage.setItem('preferredLocation', selectedLocation);
         });
     });
 
