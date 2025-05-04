@@ -849,6 +849,7 @@ body.location-palm-desert .beach-cta-img {
     width: 250px;
     height: 250px;
     /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); */
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 5));
     transition: all 0.3s ease;
 }
 
@@ -859,15 +860,15 @@ body.location-palm-desert .beach-cta-img {
 /* Responsive adjustments for image buttons */
 @media (max-width: 767px) {
     .circular-btn-image img {
-        width: 230px;
-        height: 230px;
+        width: 250px;
+        height: 250px;
     }
 }
 
 @media (max-width: 500px) {
     .circular-btn-image img {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
         gap: 0;
     }
 }
