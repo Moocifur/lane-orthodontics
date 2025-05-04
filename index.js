@@ -165,4 +165,54 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector(`.treatment-tab[data-tab="${tabToActivate}"]`).classList.add('active');
         });
     });
+
+    // Lightbox functionality for JotForm forms
+// 1. Appointment Request Form (class: lightbox-201747138890158)
+const appointmentButtons = document.querySelectorAll('.lightbox-201747138890158');
+appointmentButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        JFL_201747138890158.open();
+    });
+});
+
+// 2. Payment Form (class: lightbox-202316251833144)
+const paymentButtons = document.querySelectorAll('.payment-btn');
+paymentButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        JFL_202316251833144.open();
+    });
+});
+
+// 3. New Patient Form (class: lightbox-201746998764070)
+const newPatientButtons = document.querySelectorAll('.lightbox-201746998764070');
+newPatientButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        JFL_201746998764070.open();
+    });
+});
+
+// Add support for circular buttons in the sandy-actions section
+const circularButtons = document.querySelectorAll('.circular-btn-image');
+if (circularButtons.length >= 3) {
+    // First circular button - Appointment Request
+    circularButtons[0].addEventListener('click', function(e) {
+        e.preventDefault();
+        JFL_201747138890158.open();
+    });
+    
+    // Second circular button - Payment
+    circularButtons[1].addEventListener('click', function(e) {
+        e.preventDefault();
+        JFL_202316251833144.open();
+    });
+    
+    // Third circular button - New Patient Forms
+    circularButtons[2].addEventListener('click', function(e) {
+        e.preventDefault();
+        JFL_201746998764070.open();
+    });
+}
 });
