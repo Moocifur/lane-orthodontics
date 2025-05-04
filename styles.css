@@ -2553,3 +2553,34 @@ address {
         opacity: 0.7;
     }
 }
+
+/* Fix for absolutely positioned elements */
+.section, .hero, .sandy-actions, .doctor-profile, .treatments,
+.insurance-payment-section, .location-section, .contact-cta-section, .footer {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* Ensure all background images stay within bounds */
+.beach-cta-img, .footer-cta-img {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Fix for mobile browsers */
+@media (max-width: 767px) {
+    body {
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Ensure absolutely positioned decorative elements don't cause overflow */
+    .doctor-profile .container::before,
+    .doctor-profile .container::after,
+    .sandy-actions .cactus,
+    .sandy-actions .succulent-left,
+    .sandy-actions .succulent-right {
+        display: none; /* Or adjust positioning to stay within viewport */
+    }
+}
