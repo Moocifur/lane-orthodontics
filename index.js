@@ -125,5 +125,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// The rest of your code remains unchanged...

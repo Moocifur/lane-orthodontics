@@ -13,91 +13,87 @@
 </head>
 <body>
 
-    <!-- HEADER SECTION -->
-    <header>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
 
-        <!-- Header -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="contact-info">
-
-                    <!-- Phone number that changes based on location -->
-                    <div class="phone" data-location-content="true"> 
-                        <span class="icon"><i class="fa-solid fa-phone"></i></span>
-                        <span>(909) 799-1825</span>
-                        <!--Same phone number, so i might not need to change this?-->
-                    </div>
-
-                    <!-- Address that changes based on location -->
-                    <div class="address" data-location-content="true">
-                        <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-                        <!-- Palm Desset address -->
-                        <span data-location="palm-desert">73-899 Highway 111<br>
-                            Palm Desert, CA 92260</span>
-                        <!-- Loma Linda address -->
-                        <span data-location="loma-linda" style="display: none;">Mobile RV Unit<br>
-                            Loma Linda, CA</span>
-                    </div>
-
-                    <!-- Location Toggle -->
-                    <div class="location-toggle">
-                        <span class="toggle-label">Location:</span>
-                        <div class="toggle-container">
-                            <button class="toggle-option active" data-location="palm-desert">
-                                Palm Desert
-                            </button>
-                            <button class="toggle-option" data-location="loma-linda">
-                                Loma Linda
-                            </button>
-                        </div>
-                    </div>
-
+                <!-- Phone number that changes based on location -->
+                <div class="phone" data-location-content="true"> 
+                    <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                    <span>(909) 799-1825</span>
+                    <!--Same phone number, so i might not need to change this?-->
                 </div>
+
+                <!-- Address that changes based on location -->
+                <div class="address" data-location-content="true">
+                    <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+                    
+                    <!-- Palm Desset address -->
+                    <span data-location="palm-desert">73-899 Highway 111<br>
+                        Palm Desert, CA 92260</span>
+                    
+                        <!-- Loma Linda address -->
+                    <span data-location="loma-linda" style="display: none;">Mobile RV Unit<br>
+                        Loma Linda, CA</span>
+                        
+                </div>
+
+                <!-- Location Toggle -->
+                <div class="location-toggle">
+                    <span class="toggle-label">Location:</span>
+                    <div class="toggle-container">
+                        <button class="toggle-option active" data-location="palm-desert">
+                            Palm Desert
+                        </button>
+                        <button class="toggle-option" data-location="loma-linda">
+                            Loma Linda
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
 
-        <!-- NavBar -->
-        <nav class="main-nav">
-            <div class="container">
+    <!-- NAVBAR -->
+    <nav class="main-nav">
+        <div class="container">
 
-                <!-- Logo -->
-                <!-- <div class="logo">Lane Orthodontics</div> -->
-                <img src="images/logo-white.png" class="logo-img" alt="logo">
+            <!-- Logo -->
+            <!-- <div class="logo">Lane Orthodontics</div> -->
+            <img src="images/logo-white.png" class="logo-img" alt="logo">
 
-                 <!-- Hamburger menu button -->
-                <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
+                <!-- Hamburger menu button -->
+            <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="nav-container">
 
                 <!-- Nav Links -->
-                <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
 
-                    <!-- Nav Links -->
-                    <ul class="nav-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-
-                    <!-- Button in Nav-->
-                    <button class="btn btn-primary appointment-btn lightbox-201747138890158">
-                        <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
-                        Book Appointment
-                    </button>
-                    
-                </div>
-
+                <!-- Button in Nav-->
+                <button class="btn btn-primary appointment-btn lightbox-201747138890158">
+                    <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
+                    Book Appointment
+                </button>
+                
             </div>
-        </nav>
-    </header>
 
-    <!-- TABS! -->
-
-    
+        </div>
+    </nav>
+ 
     <!-- HERO SECTION -->
     <section id="home" class="hero section" data-location-content="true">
         <!-- Palm Desert Hero -->
