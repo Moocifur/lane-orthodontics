@@ -96,6 +96,11 @@ body.location-loma-linda .footer-logo {
     font-family: var(--ll-font);
 }
 
+/* Apply new font to paragraph text */
+body p, body a, body span, body li {
+    font-family: 'Quicksand', sans-serif; /* or 'Nunito', sans-serif */
+}
+
 /* -- RESET STYLING -- */
 * {
     margin: 0;
@@ -705,11 +710,17 @@ body.location-loma-linda .logo-img {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+
+    
 }
 
 .hero-content {
     text-align: center;
     margin-bottom: 40px;
+    
+    background-color: rgba(0, 0, 70, 0.3); /* Dark blue with 30% opacity */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .hero h1 {
@@ -724,6 +735,8 @@ body.location-loma-linda .logo-img {
     color: var(--text-light);
     max-width: 600px;
     margin: 0 auto 24px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    font-weight: 500; /* Slightly bolder text */
 }
 
 .hero-image img {
