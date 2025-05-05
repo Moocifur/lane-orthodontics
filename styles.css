@@ -101,6 +101,8 @@ body.location-loma-linda .footer-logo {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; /* Prevent callout to copy image, etc when tap on touch devices */
 }
 
 html {
@@ -122,11 +124,13 @@ body {
 }
 
 html, body {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    position: relative;
     width: 100%;
-    height: auto;
-    overscroll-behavior: none; /* Prevents bounce on all axes */
-}
+    height: 100%;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    touch-action: manipulation; /* Improve touch behavior */
+  }
 
 /* Fix for body when mobile menu is open */
 body.no-scroll {
@@ -143,6 +147,8 @@ body.no-scroll {
 
 .section {
     padding: var(--spacing-xxl) 0;
+    touch-action: pan-y; /* Allow vertical scrolling but improve touch handling */
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
 }
 
 .section-light {
@@ -1155,6 +1161,10 @@ body.location-palm-desert .beach-cta-img {
     z-index: 1;
     transform: rotate(10deg);
 }
+
+.about-section {
+    touch-action: pan-y;
+  }
 
 
 /* -- TREATMENTS SECTION -- */
