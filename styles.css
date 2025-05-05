@@ -696,7 +696,7 @@ body.location-loma-linda .logo-img {
     padding: 60px 0;
 
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
     touch-action: none; /* Disable direct touch actions on hero */
     pointer-events: none;
 }
@@ -2025,6 +2025,7 @@ body.location-palm-desert .beach-cta-img {
     overflow: visible; 
     padding: 80px 0 0; 
     margin-bottom: 0;
+    overflow: hidden;
 }
 
 /* Add sandy texture overlay */
