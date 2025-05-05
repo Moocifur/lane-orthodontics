@@ -121,6 +121,13 @@ body {
     overscroll-behavior-x: none;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    height: auto;
+    overscroll-behavior: none; /* Prevents bounce on all axes */
+}
+
 /* Fix for body when mobile menu is open */
 body.no-scroll {
     overflow: hidden;
@@ -679,6 +686,12 @@ body.location-loma-linda .logo-img {
 
     position: relative;
     /* overflow: hidden; */
+    touch-action: none; /* Disable direct touch actions on hero */
+    pointer-events: none;
+}
+
+.hero a, .hero button, .hero .interactive-element {
+    pointer-events: auto; /* Re-enable touch for interactive elements */
 }
 
 .hero-container {
