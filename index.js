@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.treatment-tab');
     
-    // Add logo click functionality to scroll to top
+    // Add logo click functionality to scroll to top - FIXED
     const logo = document.querySelector('.logo-img');
     if (logo) {
         logo.style.cursor = 'pointer'; // Change cursor to pointer to indicate it's clickable
@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth' // Add smooth scrolling effect
             });
         });
+        
+        // For debugging purposes, add a console log to confirm the event listener is attached
+        console.log('Logo click handler attached');
+    } else {
+        console.log('Logo element not found');
     }
 
     // Add click event to toggle Buttons --
@@ -40,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Update content visibility
             updateLocationContent(selectedLocation);
+
         });
     });
 
@@ -177,52 +183,94 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Lightbox functionality for JotForm forms
-// 1. Appointment Request Form (class: lightbox-201747138890158)
-const appointmentButtons = document.querySelectorAll('.lightbox-201747138890158');
-appointmentButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        JFL_201747138890158.open();
-    });
-});
-
-// 2. Payment Form (class: lightbox-202316251833144)
-const paymentButtons = document.querySelectorAll('.payment-btn');
-paymentButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        JFL_202316251833144.open();
-    });
-});
-
-// 3. New Patient Form (class: lightbox-201746998764070)
-const newPatientButtons = document.querySelectorAll('.lightbox-201746998764070');
-newPatientButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        JFL_201746998764070.open();
-    });
-});
-
-// Add support for circular buttons in the sandy-actions section
-const circularButtons = document.querySelectorAll('.circular-btn-image');
-if (circularButtons.length >= 3) {
-    // First circular button - Appointment Request
-    circularButtons[0].addEventListener('click', function(e) {
-        e.preventDefault();
-        JFL_201747138890158.open();
+    // 1. Appointment Request Form (class: lightbox-201747138890158)
+    const appointmentButtons = document.querySelectorAll('.lightbox-201747138890158');
+    appointmentButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            JFL_201747138890158.open();
+        });
     });
     
-    // Second circular button - Payment
-    circularButtons[1].addEventListener('click', function(e) {
-        e.preventDefault();
-        JFL_202316251833144.open();
+    // 2. Payment Form (class: lightbox-202316251833144)
+    const paymentButtons = document.querySelectorAll('.lightbox-202316251833144');
+    paymentButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            JFL_202316251833144.open();
+        });
     });
     
-    // Third circular button - New Patient Forms
-    circularButtons[2].addEventListener('click', function(e) {
-        e.preventDefault();
-        JFL_201746998764070.open();
+    // 3. New Patient Form (class: lightbox-201746998764070)
+    const newPatientButtons = document.querySelectorAll('.lightbox-201746998764070');
+    newPatientButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            JFL_201746998764070.open();
+        });
     });
+    
+    // Add support for circular buttons in the sandy-actions section
+    const circularButtons = document.querySelectorAll('.circular-btn-image');
+    if (circularButtons.length >= 3) {
+        // First circular button - Appointment Request
+        circularButtons[0].addEventListener('click', function(e) {
+            e.preventDefault();
+            JFL_201747138890158.open();
+        });
+        
+        // Second circular button - Payment
+        circularButtons[1].addEventListener('click', function(e) {
+            e.preventDefault();
+            JFL_202316251833144.open();
+        });
+        
+        // Third circular button - New Patient Forms
+        circularButtons[2].addEventListener('click', function(e) {
+            e.preventDefault();
+            JFL_201746998764070.open();
+        });
+    }
+
+    // Fixed logo click functionality
+document.addEventListener('click', function(event) {
+    // Check if the clicked element is the logo or a child of the logo
+    if (event.target.closest('.logo-img')) {
+        console.log('Logo clicked');
+        // Scroll to the top of the page with smooth behavior
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+});
+
+// Alternative approach - directly attach the event listener
+const logoImg = document.querySelector('.logo-img');
+if (logoImg) {
+    console.log('Logo element found, attaching event listener');
+    logoImg.style.cursor = 'pointer';
+    
+    logoImg.addEventListener('click', function() {
+        console.log('Logo click detected');
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+} else {
+    console.error('Logo element not found - check your HTML structure');
 }
+
+// Try adding this at the end of your DOMContentLoaded function
+document.querySelector('.logo-img').onclick = function(e) {
+    e.stopPropagation(); // Stop event bubbling
+    console.log('Logo clicked via direct onclick property');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    return false; // Prevent default
+  };
 });
+
