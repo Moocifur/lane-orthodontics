@@ -703,6 +703,7 @@ body.location-loma-linda .logo-img {
 
     position: relative;
     overflow: hidden;
+    z-index: 0;
     /* touch-action: none;  */
     /* pointer-events: none; */
 }
@@ -716,14 +717,16 @@ body.location-loma-linda .logo-img {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-
+    position: relative; /* Add this */
+    z-index: 2; /* Higher than leaves */
     
 }
 
 .hero-content {
     text-align: center;
     margin-bottom: 40px;
-    
+    z-index: 2;
+
     background-color: rgba(0, 0, 70, 0.3); 
     padding: 20px;
     border-radius: 10px;
@@ -753,6 +756,7 @@ body.location-loma-linda .logo-img {
     height: auto;
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
+    z-index: 3;
 }
 
 /* Video in hero section */
@@ -763,19 +767,16 @@ body.location-loma-linda .logo-img {
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
     object-fit: cover;
+    z-index: 3;
 }
 
 /* Palm Desert Hero */
 body.location-palm-desert .hero {
     background-color: var(--primary-color);
-    background-image: url('images/palm.png');
-    background-repeat: repeat-x;
-    background-position: top;
     color: white;
     padding-top: 80px;
     padding-bottom: 60px;
     position: relative;
-    /* overflow: hidden; */
 }
 
 body.location-palm-desert .hero h1,
@@ -800,50 +801,6 @@ body.location-palm-desert .hero-video {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* body.location-loma-linda .hero {
-    background-color: #8ECAE6;
-    background-image: url('images/palm.png');
-    color: white;
-    padding-top: 80px;
-    padding-bottom: 60px;
-}
-
-
-body.location-loma-linda .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 25px;
-    background-image: url('images/palm.png');
-    background-repeat: repeat-x;
-    background-position: top;
-    opacity: 0.6;
-}
-
-
-body.location-loma-linda .hero h1,
-body.location-loma-linda .hero p {
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-
-body.location-loma-linda .hero-content {
-    
-    padding: 30px;
-    border-radius: var(--border-radius-md);
-    
-} */
-
-/* Wire Wagon Loma Linda Hero Styles - Complete CSS */
-
-/* Wire Wagon Loma Linda Hero Styles - Updated without curved text elements */
-
-/* Wire Wagon Loma Linda Hero Styles - Complete CSS */
-
-/* Wire Wagon Loma Linda Hero Styles - Complete CSS with requested updates */
 
 /* Main hero container */
 body.location-loma-linda .hero {
@@ -861,9 +818,7 @@ body.location-loma-linda .hero::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/palm.png');
-    background-size: 300px auto;
-    background-position: center top;
+    background-color: rgba(255, 255, 255, 0.1);
     opacity: 0.3;
     z-index: 1;
 }
@@ -1244,7 +1199,6 @@ body.location-loma-linda .hero-content::after {
     }
 }
 
-
 .beach-cta-img {
     display: block;
     width: 100%;
@@ -1389,10 +1343,6 @@ body.location-palm-desert .beach-cta-img {
     left: 0;
     width: 100%;
     height: 100px;
-    background-image: url('images/palm.png');
-    background-repeat: repeat-x;
-    background-position: bottom;
-    background-size: 200px auto;
     opacity: 0.3;
     pointer-events: none;
 }
@@ -1850,10 +1800,6 @@ body.location-palm-desert .beach-cta-img {
     left: 0;
     width: 100%;
     height: 80px;
-    background-image: url('images/palm.png');
-    background-repeat: repeat-x;
-    background-position: bottom;
-    background-size: 150px auto;
     opacity: 0.25;
     z-index: 1;
 }
@@ -3017,5 +2963,59 @@ address {
     .sandy-actions .succulent-left,
     .sandy-actions .succulent-right {
         display: none; /* Or adjust positioning to stay within viewport */
+    }
+}
+
+/* Palm leaf decoration for hero section */
+.palm-leaf-decoration {
+    position: absolute;
+    top: -20;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 280px; /* Adjust height as needed */
+    background-image: url('images/drape.png');
+    background-repeat: repeat-x;
+    background-position: top center;
+    background-size: 20% auto; 
+    z-index: 1;
+    pointer-events: none; 
+    margin-top: -90px;
+}
+
+/* Update hero-content to ensure text displays above the palm leaves */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Higher than palm leaf decoration */
+}
+
+/* For the Loma Linda theme specifically */
+body.location-loma-linda .palm-leaf-decoration {
+    opacity: 0.70;
+    margin-top: -40px;
+}
+
+/* For the Palm Desert theme */
+body.location-palm-desert .palm-leaf-decoration {
+    background-image: url('images/drape.png'); 
+    opacity: 0.9; 
+}
+
+/* Make sure the hero has proper positioning for the decoration */
+.hero {
+    position: relative;
+    overflow: visible;
+    padding-top: 70px;
+}
+
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+    .palm-leaf-decoration {
+        height: 340px; /* Smaller height on mobile */
+        background-size: 150% auto; /* Increase background size on mobile */
+    }
+    
+    .hero {
+        padding-top: 50px; 
     }
 }
