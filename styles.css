@@ -800,16 +800,15 @@ body.location-palm-desert .hero-video {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Loma Linda Beach Hero */
-body.location-loma-linda .hero {
-    background-color: var(--ll-secondary);
+/* body.location-loma-linda .hero {
+    background-color: #8ECAE6;
     background-image: url('images/palm.png');
     color: white;
     padding-top: 80px;
     padding-bottom: 60px;
 }
 
-/* Add a beach wave pattern at the top */
+
 body.location-loma-linda .hero::before {
     content: '';
     position: absolute;
@@ -823,22 +822,414 @@ body.location-loma-linda .hero::before {
     opacity: 0.6;
 }
 
-/* Make text readable on blue background */
+
 body.location-loma-linda .hero h1,
 body.location-loma-linda .hero p {
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Style the content container like Palm Desert's */
+
 body.location-loma-linda .hero-content {
-    /* background-color: rgba(26, 86, 219, 0.6); */
+    
     padding: 30px;
     border-radius: var(--border-radius-md);
-    /* backdrop-filter: blur(5px); */
+    
+} */
+
+/* Wire Wagon Loma Linda Hero Styles - Complete CSS */
+
+/* Wire Wagon Loma Linda Hero Styles - Updated without curved text elements */
+
+/* Wire Wagon Loma Linda Hero Styles - Complete CSS */
+
+/* Wire Wagon Loma Linda Hero Styles - Complete CSS with requested updates */
+
+/* Main hero container */
+body.location-loma-linda .hero {
+    background-color: #87CEEB; /* Light blue background */
+    position: relative;
+    padding: 40px 0 60px;
+    overflow: hidden;
 }
 
-/* bottom images */
+/* Add palm leaf pattern overlay */
+body.location-loma-linda .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/palm.png');
+    background-size: 300px auto;
+    background-position: center top;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* Remove the dark overlay/background */
+body.location-loma-linda .hero::after {
+    display: none;
+}
+
+body.location-loma-linda .hero-content {
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: none;
+}
+
+/* Header section styling with proper centering */
+body.location-loma-linda .wire-wagon-header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.location-loma-linda .hero h1 {
+    font-family: var(--ll-font);
+    color: #1a3c6e;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+}
+
+body.location-loma-linda .wire-wagon-title {
+    font-family: var(--ll-font);
+    color: #0c2d6b;
+    font-size: 4rem;
+    margin: 0 0 5px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+}
+
+body.location-loma-linda .mobile-ortho {
+    font-family: var(--base-font);
+    color: #1a3c6e;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+/* Two-column layout - UPDATED with new positioning */
+body.location-loma-linda .wire-wagon-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 0;
+    background-color: transparent;
+    align-items: flex-start;
+}
+
+/* Left column styling */
+body.location-loma-linda .wire-wagon-text {
+    flex: 1;
+    padding-right: 30px;
+    max-width: 55%;
+    text-align: left;
+}
+
+body.location-loma-linda .wire-wagon-text h3 {
+    font-family: var(--ll-font);
+    font-size: 2.5rem;
+    color: #1a3c6e;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    line-height: 1.2;
+}
+
+/* UPDATED: Increased paragraph text size and improved readability */
+body.location-loma-linda .wire-wagon-text p {
+    font-size: 1.2rem; /* Increased from 1.05rem */
+    line-height: 1.6; /* Improved line height */
+    margin-bottom: 18px; /* Slightly increased spacing between paragraphs */
+    color: #1a3c6e; /* Darkened text color for better contrast */
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8); /* Added text shadow for better readability */
+    font-weight: 500; /* Slightly bolder for better visibility */
+}
+
+/* Right side column - UPDATED with new positioning */
+body.location-loma-linda .wire-wagon-graphic {
+    flex: 1;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -60px; /* Move RV image up */
+}
+
+/* RV container styling - simplified without curved text */
+body.location-loma-linda .rv-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 20px;
+    background-color: transparent;
+}
+
+/* RV Image styling - UPDATED */
+body.location-loma-linda .mobile-rv-image {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background-color: transparent;
+    margin-top: -20px; /* Adjusted to move up */
+}
+
+body.location-loma-linda .rv-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.2));
+}
+
+/* Contact info section - UPDATED to be closer to RV */
+body.location-loma-linda .contact-info-mobile {
+    text-align: center;
+    margin-top: -40px; /* Moved up to be closer to RV */
+    background-color: transparent;
+    position: relative;
+    z-index: 4;
+    padding-right: 30px;
+}
+
+body.location-loma-linda .contact-info-mobile h3 {
+    font-family: var(--ll-font);
+    font-size: 2.8rem;
+    color: #1a3c6e;
+    margin-bottom: -5px;
+    font-style: italic;
+    text-align: center;
+}
+
+body.location-loma-linda .contact-info-mobile h4 {
+    font-family: var(--ll-font);
+    font-size: 2.3rem;
+    color: #1a3c6e;
+    margin-top: -5px;
+    margin-bottom: 0;
+    font-style: italic;
+    text-align: center;
+}
+
+body.location-loma-linda .phone-large {
+    font-family: var(--ll-font);
+    font-size: 2.8rem;
+    color: #1a3c6e;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-style: italic;
+    text-align: center;
+}
+
+body.location-loma-linda .phone-large:hover {
+    transform: scale(1.05);
+    color: #1a56db;
+}
+
+/* Footer section with returning patient text and surfboard - UPDATED */
+body.location-loma-linda .wire-wagon-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px; /* UPDATED: Increased from 20px to add more space below phone number */
+    gap: 15px; /* UPDATED: Reduced from 30px to bring elements closer together */
+    background-color: transparent;
+}
+
+/* Returning patient section */
+body.location-loma-linda .returning-patient {
+    text-align: left;
+    background-color: transparent;
+}
+
+body.location-loma-linda .returning-patient h3 {
+    font-size: 2.2rem;
+    font-style: italic;
+    color: #1a3c6e;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* Surfboard button styling - UPDATED */
+body.location-loma-linda .surfboard-container {
+    max-width: 300px;
+    background-color: transparent;
+    margin-top: -10px; /* UPDATED: Added negative margin to move closer to text */
+}
+
+body.location-loma-linda .surfboard-button {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+body.location-loma-linda .surfboard-button:hover {
+    transform: translateY(-5px);
+}
+
+body.location-loma-linda .surfboard-img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Beach image at bottom of hero */
+body.location-loma-linda .beach-cta-img {
+    background-image: url('images/top-beach.png');
+}
+
+body.location-loma-linda .footer-cta-img {
+    background-image: url('images/bottom-beach.png');
+    margin-bottom: -15px;
+}
+
+/* Responsive adjustments - UPDATED */
+@media (max-width: 992px) {
+    body.location-loma-linda .wire-wagon-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    body.location-loma-linda .wire-wagon-text {
+        text-align: center;
+        max-width: 100%;
+        padding-right: 0;
+    }
+    
+    /* Keep larger text size on mobile */
+    body.location-loma-linda .wire-wagon-text p {
+        font-size: 1.15rem; /* Still larger than original but better for mobile */
+        padding: 0 10px;
+    }
+    
+    body.location-loma-linda .wire-wagon-graphic {
+        margin-top: 0; /* Remove negative margin on mobile */
+        max-width: 100%;
+    }
+    
+    body.location-loma-linda .contact-info-mobile {
+        margin-top: 0; /* Adjust for mobile */
+        padding-right: 0;
+    }
+    
+    body.location-loma-linda .wire-wagon-footer {
+        flex-direction: column;
+        margin-top: 60px; /* UPDATED: Still keep good spacing on mobile */
+        gap: 30px; /* UPDATED: Increase gap between elements in column layout */
+    }
+    
+    body.location-loma-linda .returning-patient {
+        text-align: center;
+    }
+    
+    /* Ensure surfboard button is aligned properly on mobile */
+    body.location-loma-linda .surfboard-container {
+        margin-top: 0; /* Remove negative margin on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    body.location-loma-linda .wire-wagon-title {
+        font-size: 3rem;
+    }
+    
+    body.location-loma-linda .wire-wagon-text h3 {
+        font-size: 2rem;
+    }
+    
+    body.location-loma-linda .returning-patient h3 {
+        font-size: 1.8rem;
+    }
+    
+    body.location-loma-linda .contact-info-mobile h3 {
+        font-size: 2rem;
+        margin-bottom: -5px;
+    }
+    
+    body.location-loma-linda .contact-info-mobile h4 {
+        font-size: 1.8rem;
+        margin-bottom: -5px;
+    }
+    
+    body.location-loma-linda .phone-large {
+        font-size: 2.2rem;
+    }
+    
+    body.location-loma-linda .landscape {
+        margin-bottom: -25px;
+    }
+}
+
+@media (max-width: 576px) {
+    body.location-loma-linda .wire-wagon-title {
+        font-size: 2.5rem;
+    }
+    
+    body.location-loma-linda .wire-wagon-text h3,
+    body.location-loma-linda .returning-patient h3 {
+        font-size: 1.8rem;
+    }
+    
+    body.location-loma-linda .contact-info-mobile h3 {
+        font-size: 1.8rem;
+    }
+    
+    body.location-loma-linda .contact-info-mobile h4 {
+        font-size: 1.6rem;
+    }
+    
+    body.location-loma-linda .phone-large {
+        font-size: 2rem;
+    }
+    
+    /* UPDATED: Ensure good spacing on smallest screens */
+    body.location-loma-linda .wire-wagon-footer {
+        margin-top: 50px;
+        gap: 25px;
+    }
+}
+
+/* Fix for mobile browsers */
+@media (max-width: 767px) {
+    body.location-loma-linda .landscape {
+        margin-bottom: -25px;
+    }
+}
+
+/* Additional fixes for any dark overlays */
+body.location-loma-linda .hero .container::before,
+body.location-loma-linda .hero .container::after,
+body.location-loma-linda .hero-content::before,
+body.location-loma-linda .hero-content::after {
+    display: none;
+}
+
 .landscape {
     margin-bottom: -90px;
 }
@@ -852,7 +1243,6 @@ body.location-loma-linda .hero-content {
         margin-bottom: -25px;
     }
 }
-
 
 
 .beach-cta-img {
