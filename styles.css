@@ -1172,9 +1172,14 @@ body.location-loma-linda .footer-cta-img {
     }
     
     /* UPDATED: Ensure good spacing on smallest screens */
-    body.location-loma-linda .wire-wagon-footer {
-        /* margin-top: 40px;
-        gap: 25px; */
+    /* body.location-loma-linda .wire-wagon-footer {
+        margin-top: 40px;
+        gap: 25px;
+    } */
+
+    body.location-loma-linda .surfboard-img {
+        width: 120%;
+        padding-right: 20px;
     }
 }
 
