@@ -1187,6 +1187,7 @@ body.location-loma-linda .hero-content::after {
 
 .landscape {
     margin-bottom: -90px;
+    z-index: 8;
 }
 
 @media (max-width: 576px) {
