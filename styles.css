@@ -917,7 +917,7 @@ body.location-loma-linda .wire-wagon-text h3 {
 body.location-loma-linda .wire-wagon-text p {
     font-size: 1.2rem; /* Increased from 1.05rem */
     line-height: 1.6; /* Improved line height */
-    margin-bottom: 18px; /* Slightly increased spacing between paragraphs */
+    margin-bottom: 18px; 
     color: #1a3c6e; /* Darkened text color for better contrast */
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8); /* Added text shadow for better readability */
     font-weight: 500; /* Slightly bolder for better visibility */
@@ -1011,8 +1011,8 @@ body.location-loma-linda .wire-wagon-footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 70px; /* UPDATED: Increased from 20px to add more space below phone number */
-    gap: 15px; /* UPDATED: Reduced from 30px to bring elements closer together */
+    margin-top: 0px; 
+    /* gap: 15px;  */
     background-color: transparent;
 }
 
@@ -1041,15 +1041,16 @@ body.location-loma-linda .surfboard-button {
     display: inline-block;
     position: relative;
     text-decoration: none;
+    transform: rotate(-8deg);
     transition: transform 0.3s ease;
 }
 
 body.location-loma-linda .surfboard-button:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) rotate(-8deg);
 }
 
 body.location-loma-linda .surfboard-img {
-    width: 100%;
+    width: 130%;
     height: auto;
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
 }
@@ -1095,8 +1096,9 @@ body.location-loma-linda .footer-cta-img {
     
     body.location-loma-linda .wire-wagon-footer {
         flex-direction: column;
-        margin-top: 60px; /* UPDATED: Still keep good spacing on mobile */
-        gap: 30px; /* UPDATED: Increase gap between elements in column layout */
+        margin-top: 60px; 
+        gap: 30px; 
+        
     }
     
     body.location-loma-linda .returning-patient {
@@ -1105,7 +1107,13 @@ body.location-loma-linda .footer-cta-img {
     
     /* Ensure surfboard button is aligned properly on mobile */
     body.location-loma-linda .surfboard-container {
-        margin-top: 0; /* Remove negative margin on mobile */
+        /* margin-top: 0; */
+
+        max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     }
 }
 
@@ -1165,8 +1173,8 @@ body.location-loma-linda .footer-cta-img {
     
     /* UPDATED: Ensure good spacing on smallest screens */
     body.location-loma-linda .wire-wagon-footer {
-        margin-top: 50px;
-        gap: 25px;
+        /* margin-top: 40px;
+        gap: 25px; */
     }
 }
 
