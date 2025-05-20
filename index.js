@@ -1,5 +1,88 @@
 // index.js
 
+// Odin Project style carousel functionality - without pausing on hover
+function initializeCarousel() {
+    // Exit if no carousel exists
+    const track = document.querySelector('.carousel-track');
+    if (!track) return;
+    
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const numSlides = slides.length;
+    
+    if (numSlides === 0) return;
+    
+    // Set up track width and slide width dynamically
+    track.style.width = `${numSlides * 100}%`; // track width = 100% * number of slides
+    slides.forEach(slide => {
+        slide.style.width = `${100 / numSlides}%`; // each slide width = 100% / number of slides
+    });
+    
+    // Initialize position trackers
+    let currentIndex = 0;
+    
+    // Get UI elements
+    const nextButton = document.querySelector('.carousel-next');
+    const prevButton = document.querySelector('.carousel-prev');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    
+    // Function to move to a specific slide
+    function goToSlide(index) {
+        // Calculate position - negative percentage based on slide index
+        const position = -(index * (100 / numSlides)) + '%';
+        track.style.transform = `translateX(${position})`;
+        
+        // Update active dot
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+        
+        // Update current index
+        currentIndex = index;
+    }
+    
+    // Initialize first slide
+    goToSlide(0);
+    
+    // Event listener for next button
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            // Go to next slide, or loop back to first
+            const nextIndex = (currentIndex + 1) % numSlides;
+            goToSlide(nextIndex);
+        });
+    }
+    
+    // Event listener for previous button
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            // Go to previous slide, or loop to last
+            const prevIndex = (currentIndex - 1 + numSlides) % numSlides;
+            goToSlide(prevIndex);
+        });
+    }
+    
+    // Event listeners for dot indicators
+    if (dots.length) {
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+    }
+    
+    // Auto-advance slides every 5 seconds - continuous, no pausing
+    setInterval(() => {
+        const nextIndex = (currentIndex + 1) % numSlides;
+        goToSlide(nextIndex);
+    }, 5000);
+    
+    // Handle window resize to maintain correct positioning
+    window.addEventListener('resize', () => {
+        // Re-apply the current position after resize
+        goToSlide(currentIndex);
+    });
+}
+
 // Wait for the Dom to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -233,44 +316,47 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Fixed logo click functionality
-document.addEventListener('click', function(event) {
-    // Check if the clicked element is the logo or a child of the logo
-    if (event.target.closest('.logo-img')) {
-        console.log('Logo clicked');
-        // Scroll to the top of the page with smooth behavior
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    document.addEventListener('click', function(event) {
+        // Check if the clicked element is the logo or a child of the logo
+        if (event.target.closest('.logo-img')) {
+            console.log('Logo clicked');
+            // Scroll to the top of the page with smooth behavior
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    });
+
+    // Alternative approach - directly attach the event listener
+    const logoImg = document.querySelector('.logo-img');
+    if (logoImg) {
+        console.log('Logo element found, attaching event listener');
+        logoImg.style.cursor = 'pointer';
+        
+        logoImg.addEventListener('click', function() {
+            console.log('Logo click detected');
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
+    } else {
+        console.error('Logo element not found - check your HTML structure');
     }
-});
 
-// Alternative approach - directly attach the event listener
-const logoImg = document.querySelector('.logo-img');
-if (logoImg) {
-    console.log('Logo element found, attaching event listener');
-    logoImg.style.cursor = 'pointer';
-    
-    logoImg.addEventListener('click', function() {
-        console.log('Logo click detected');
+    // Try adding this at the end of your DOMContentLoaded function
+    document.querySelector('.logo-img').onclick = function(e) {
+        e.stopPropagation(); // Stop event bubbling
+        console.log('Logo clicked via direct onclick property');
         window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        top: 0,
+        behavior: 'smooth'
         });
-    });
-} else {
-    console.error('Logo element not found - check your HTML structure');
-}
+        return false; // Prevent default
+    };
 
-// Try adding this at the end of your DOMContentLoaded function
-document.querySelector('.logo-img').onclick = function(e) {
-    e.stopPropagation(); // Stop event bubbling
-    console.log('Logo clicked via direct onclick property');
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-    return false; // Prevent default
-  };
+    initializeCarousel();
+
 });
 
