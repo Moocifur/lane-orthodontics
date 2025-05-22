@@ -141,7 +141,7 @@ body {
     font-family: var(--base-font);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     margin: 0;
     padding: 0;
     position: relative;
@@ -153,7 +153,7 @@ body {
 }
 
 html, body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     position: relative;
 }
 
@@ -378,6 +378,7 @@ body.location-loma-linda .top-bar {
 
 .main-nav {
     position: sticky;
+    position: -webkit-sticky; /* Safari support */
     top: 0;
     z-index: 1000;
     width: 100%;
@@ -2284,6 +2285,48 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
     }
 
     /* Hero section desktop layout */
+    body.location-palm-desert .hero-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    body.location-palm-desert .hero-content {
+        flex: 1;
+        text-align: left;
+        background-color: rgba(74, 96, 35, 0.01);
+        padding: 30px;
+        border-radius: var(--border-radius-md);
+        margin-bottom: 0;
+    }
+
+    body.location-palm-desert .hero-content h1 {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    body.location-palm-desert .hero-content p {
+        text-align: left;
+        margin: 0 0 24px 0;
+    }
+
+    body.location-palm-desert .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body.location-palm-desert .hero-video {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
     .hero-container {
         flex-direction: row;
         justify-content: space-between;
@@ -2330,6 +2373,22 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
 
     .doctor-image {
         flex: 1;
+    }
+
+    .treatment-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+        justify-items: center;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .treatment-card {
+        width: 100%;
+        max-width: 300px;
     }
 
     /* Footer desktop layout */
@@ -2558,6 +2617,46 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
         border-radius: 5px;
     }
 
+    body.location-palm-desert .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    body.location-palm-desert .hero-content {
+        order: 1;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body.location-palm-desert .hero-content h1 {
+        order: 1;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    body.location-palm-desert .hero-content p {
+        order: 2;
+        text-align: center;
+        margin: 0 0 0 0;
+    }
+
+    body.location-palm-desert .hero-image {
+        order: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    body.location-palm-desert .hero-video {
+        width: 100%;
+        max-width: 400px;
+    }
+
     .appointment-btn,
     .payment-btn {
         width: 100%;
@@ -2589,9 +2688,31 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
         padding: 60px 0;
     }
 
+    /* Fix doctor section mobile layout - proper order */
+    .doctor-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    /* Reorder elements on mobile */
+    .doctor-info {
+        max-width: 100%;
+        text-align: center;
+        order: 2; /* Text comes after image */
+    }
+
     .doctor-image {
         margin-top: 20px;
         max-width: 300px;
+        align-self: center;
+        order: 1; /* Image comes first after header */
+    }
+
+    /* Carousel comes last */
+    .doctor-carousel {
+        order: 3;
     }
 
     .doctor-content::before {
@@ -2614,8 +2735,15 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
     }
 
     .treatment-cards {
+        display: grid;
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         gap: 20px;
+        justify-items: center;
+    }
+
+    .treatment-card {
+        width: 100%;
+        max-width: 280px;
     }
 
     .treatment-card img {
