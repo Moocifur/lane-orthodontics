@@ -141,7 +141,6 @@ body {
     font-family: var(--base-font);
     color: var(--text-color);
     line-height: 1.6;
-    /* overflow-x: hidden; */
     margin: 0;
     padding: 0;
     position: relative;
@@ -153,8 +152,9 @@ body {
 }
 
 html, body {
-    /* overflow-x: hidden; */
     position: relative;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: auto;
 }
 
 body.no-scroll {
@@ -2487,6 +2487,12 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
         padding-bottom: 60px;
         scrollbar-width: none;
         -ms-overflow-style: none;
+
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overscroll-behavior: contain; /* Prevent elastic scrolling */
+        overscroll-behavior-y: contain; /* Allow vertical, prevent elastic */
+        overscroll-behavior-x: none; /* No horizontal overscroll */
+        -webkit-overflow-scrolling: touch;
     }
 
     body.location-palm-desert .nav-container {
@@ -2577,6 +2583,20 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
         font-size: 1.1rem;
         transition: background-color 0.2s ease;
         margin: 0;
+    }
+
+    .nav-link-icon {
+        margin-right: 15px; /* Increased from default spacing */
+        min-width: 20px; /* Ensure consistent icon width */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-link-icon i {
+        font-size: 1.1rem;
+        width: 20px;
+        text-align: center;
     }
 
     .nav-links a:hover {
