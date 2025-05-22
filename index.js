@@ -83,20 +83,238 @@ function initializeCarousel() {
     });
 }
 
-// Wait for the Dom to be fully loaded before running the script
-document.addEventListener('DOMContentLoaded', function() {
-
+// Function to handle the mobile menu
+function initializeMobileMenu() {
     // Select the DOM elements we need to work with
     const hamburger = document.querySelector('.hamburger-menu');
     const navContainer = document.querySelector('.nav-container');
+    const menuBackdrop = document.querySelector('.menu-backdrop');
+    const body = document.body;
+
+    // NEW FUNCTION: Add this function to manage mobile nav visibility
+    function adjustMobileNavVisibility() {
+        const navHeader = document.querySelector('.nav-header');
+        const screenWidth = window.innerWidth;
+        
+        // Only show the nav-header on mobile when menu is active
+        if (screenWidth < 768) {
+            if (navHeader) {
+                if (navContainer.classList.contains('active')) {
+                    navHeader.style.display = 'flex';
+                } else {
+                    navHeader.style.display = 'none';
+                }
+            }
+        } else {
+            // Hide mobile elements on desktop
+            if (navHeader) {
+                navHeader.style.display = 'none';
+            }
+            
+            // Reset nav container styles on desktop
+            if (navContainer) {
+                navContainer.style.left = '';
+                navContainer.style.height = '';
+                navContainer.style.width = '';
+                navContainer.style.paddingBottom = '';
+            }
+        }
+    }
+
+    // Check if we need to add the menu close button (for the Odin Project style)
+    if (!document.querySelector('.menu-close') && navContainer) {
+        // Create the menu header if it doesn't exist
+        if (!document.querySelector('.nav-header')) {
+            const navHeader = document.createElement('div');
+            navHeader.className = 'nav-header';
+            
+            // Get location-specific title
+            const locationTitle = body.classList.contains('location-loma-linda') ? 
+                'WIRE WAGON' : 'LANE ORTHODONTICS';
+            
+            // Create the header content
+            navHeader.innerHTML = `
+                <div class="mobile-menu-logo">
+                    <img src="images/logo-white.png" alt="Logo">
+                    <span class="mobile-menu-title">${locationTitle}</span>
+                </div>
+                <button class="menu-close" aria-label="Close menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            `;
+            
+            // Insert at the beginning of nav container
+            navContainer.insertBefore(navHeader, navContainer.firstChild);
+            
+            // Add icons to navigation links if they don't have them already
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                if (!link.querySelector('.nav-link-icon')) {
+                    // Get the link text to determine which icon to use
+                    const linkText = link.textContent.trim().toLowerCase();
+                    let iconClass = 'fa-circle'; // Default icon
+                    
+                    // Map link text to appropriate icons
+                    if (linkText.includes('home')) iconClass = 'fa-house';
+                    else if (linkText.includes('about')) iconClass = 'fa-user-doctor';
+                    else if (linkText.includes('services')) iconClass = 'fa-tooth';
+                    else if (linkText.includes('insurance')) iconClass = 'fa-file-invoice-dollar';
+                    else if (linkText.includes('location')) iconClass = 'fa-location-dot';
+                    else if (linkText.includes('contact')) iconClass = 'fa-envelope';
+                    
+                    // Create the icon span
+                    const iconSpan = document.createElement('span');
+                    iconSpan.className = 'nav-link-icon';
+                    iconSpan.innerHTML = `<i class="fa-solid ${iconClass}"></i>`;
+                    
+                    // Insert icon at beginning of link
+                    link.insertBefore(iconSpan, link.firstChild);
+                }
+            });
+            
+            // Add the nav-divider if it doesn't exist
+            if (!document.querySelector('.nav-divider') && document.querySelector('.nav-buttons')) {
+                const navDivider = document.createElement('div');
+                navDivider.className = 'nav-divider';
+                navContainer.insertBefore(navDivider, document.querySelector('.nav-buttons-wrapper') || document.querySelector('.nav-buttons'));
+            }
+            
+            // Wrap the nav buttons in a wrapper if needed
+            const navButtons = document.querySelector('.nav-buttons');
+            if (navButtons && !document.querySelector('.nav-buttons-wrapper')) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'nav-buttons-wrapper';
+                navButtons.parentNode.insertBefore(wrapper, navButtons);
+                wrapper.appendChild(navButtons);
+            }
+        }
+    }
+
+    // Add event listeners for mobile menu
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            // Toggle the active class on the hamburger icon
+            hamburger.classList.toggle('active');
+            // Toggle the active class on the nav container
+            navContainer.classList.toggle('active');
+            // Toggle the active class on the backdrop
+            if (menuBackdrop) {
+                menuBackdrop.classList.toggle('active');
+            }
+            // Toggle no-scroll class on body
+            body.classList.toggle('no-scroll');
+            // Update accessibility
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !expanded);
+            
+            // NEW: Call the visibility function after toggling
+            adjustMobileNavVisibility();
+        });
+    }
+
+    // Add event listener for close button
+    const menuClose = document.querySelector('.menu-close');
+    if (menuClose) {
+        menuClose.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navContainer.classList.remove('active');
+            if (menuBackdrop) {
+                menuBackdrop.classList.remove('active');
+            }
+            body.classList.remove('no-scroll');
+            hamburger.setAttribute('aria-expanded', 'false');
+            
+            // NEW: Call the visibility function after closing
+            adjustMobileNavVisibility();
+        });
+    }
+
+    // Close menu when backdrop is clicked
+    if (menuBackdrop) {
+        menuBackdrop.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navContainer.classList.remove('active');
+            menuBackdrop.classList.remove('active');
+            body.classList.remove('no-scroll');
+            hamburger.setAttribute('aria-expanded', 'false');
+            
+            // NEW: Call the visibility function after closing
+            adjustMobileNavVisibility();
+        });
+    }
+    
+    // Add click event to all nav links to close menu
     const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navContainer.classList.remove('active');
+            if (menuBackdrop) {
+                menuBackdrop.classList.remove('active');
+            }
+            body.classList.remove('no-scroll');
+            hamburger.setAttribute('aria-expanded', 'false');
+            
+            // NEW: Call the visibility function after closing
+            adjustMobileNavVisibility();
+        });
+    });
+    
+    // Adjust for Rhinogram widget
+    function adjustForRhinogram() {
+        const rhinogramContainer = document.getElementById('rhinogram-container');
+        if (rhinogramContainer) {
+            // Try to find the Rhinogram widget
+            const rhinogramWidget = rhinogramContainer.querySelector('.rhinogram-widget');
+            if (rhinogramWidget && window.innerWidth <= 767) {
+                // Get the height of the widget
+                const widgetHeight = rhinogramWidget.offsetHeight || 80;
+                // Apply padding to nav-buttons-wrapper or directly to nav-container
+                const buttonsWrapper = document.querySelector('.nav-buttons-wrapper');
+                if (buttonsWrapper) {
+                    buttonsWrapper.style.paddingBottom = (widgetHeight + 30) + 'px';
+                } else if (navContainer) {
+                    navContainer.style.paddingBottom = (widgetHeight + 30) + 'px';
+                }
+            }
+        }
+    }
+    
+    // Run initial adjustment
+    adjustForRhinogram();
+    adjustMobileNavVisibility(); // NEW: Call on initial load
+    
+    // Re-adjust on window resize
+    window.addEventListener('resize', function() {
+        adjustForRhinogram();
+        adjustMobileNavVisibility(); // NEW: Call on window resize
+    });
+    
+    // Set up observer for Rhinogram widget
+    const rhinogramContainer = document.getElementById('rhinogram-container');
+    if (rhinogramContainer) {
+        const observer = new MutationObserver(function() {
+            adjustForRhinogram();
+        });
+        
+        observer.observe(rhinogramContainer, { 
+            childList: true,
+            subtree: true,
+            attributes: true
+        });
+    }
+}
+
+// Wait for the DOM to be fully loaded before running the script
+document.addEventListener('DOMContentLoaded', function() {
+    // Select the DOM elements we need to work with
     const toggleOptions = document.querySelectorAll('.toggle-option');
     // Get all content elements that change based on location
     const locationContent = document.querySelectorAll('[data-location-content="true"]');
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.treatment-tab');
     
-    // Add logo click functionality to scroll to top - FIXED
+    // Add logo click functionality to scroll to top
     const logo = document.querySelector('.logo-img');
     if (logo) {
         logo.style.cursor = 'pointer'; // Change cursor to pointer to indicate it's clickable
@@ -106,21 +324,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth' // Add smooth scrolling effect
             });
         });
-        
-        // For debugging purposes, add a console log to confirm the event listener is attached
-        console.log('Logo click handler attached');
-    } else {
-        console.log('Logo element not found');
     }
 
-    // Add click event to toggle Buttons --
+    // Add click event to toggle Buttons
     toggleOptions.forEach(option => {
         option.addEventListener('click', function() {
-            //Get selected location
+            // Get selected location
             const selectedLocation = this.getAttribute('data-location');
             console.log('Selected location:', selectedLocation);
             
-            //Update active toggle button
+            // Update active toggle button
             toggleOptions.forEach(btn => {
                 btn.classList.remove('active');
             });
@@ -128,13 +341,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Update content visibility
             updateLocationContent(selectedLocation);
-
         });
     });
 
-    //Function to update content based on location
+    // Function to update content based on location
     function updateLocationContent(selectedLocation) {
-        //Add body class for location-specific styling
+        // Add body class for location-specific styling
         document.body.classList.remove('location-palm-desert', 'location-loma-linda');
         document.body.classList.add('location-' + selectedLocation);
 
@@ -167,6 +379,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         updateNavigation(selectedLocation);
+        
+        // Update mobile menu with location-specific title
+        const mobileMenuTitle = document.querySelector('.mobile-menu-title');
+        if (mobileMenuTitle) {
+            mobileMenuTitle.textContent = selectedLocation === 'loma-linda' ? 'WIRE WAGON' : 'LANE ORTHODONTICS';
+        }
     }
 
     function updateNavigation(selectedLocation) {
@@ -185,8 +403,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Custom links for Loma Linda
             navItemsList.innerHTML = `
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About The Wire Wagon</a></li>
+                <li><a href="#home"><span class="nav-link-icon"><i class="fa-solid fa-house"></i></span>Home</a></li>
+                <li><a href="#about"><span class="nav-link-icon"><i class="fa-solid fa-info-circle"></i></span>About The Wire Wagon</a></li>
             `;
         } else {
             // Reset to Palm Desert navigation
@@ -203,8 +421,14 @@ document.addEventListener('DOMContentLoaded', function() {
         updatedNavLinks.forEach(link => {
             link.addEventListener('click', () => {
                 const hamburger = document.querySelector('.hamburger-menu');
+                const menuBackdrop = document.querySelector('.menu-backdrop');
+                
                 hamburger.classList.remove('active');
                 navContainer.classList.remove('active');
+                if (menuBackdrop) {
+                    menuBackdrop.classList.remove('active');
+                }
+                document.body.classList.remove('no-scroll');
                 hamburger.setAttribute('aria-expanded', 'false');
             });
         });
@@ -212,42 +436,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Default to Palm Desert (no checking localStorage)
     updateLocationContent('palm-desert');
-
-    // Toggle menu on hamburger icon is clicked --
-    hamburger.addEventListener('click', function() {
-        // Toggle the 'active' class on the hamburger icon (transforms to X)
-        hamburger.classList.toggle('active');
-        // Toggle the 'active' class on the nav container (slides in / out)
-        navContainer.classList.toggle('active');
-        // Update aria-expanded for accessibility for readers
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-        hamburger.setAttribute('aria-expanded', !expanded);
-    });
-
-    // Close menu when any navigation link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            // Remove 'active' class from hamburger (changes X back to hamburger)
-            hamburger.classList.remove('active');
-            // Remove 'active' class from nav container (slides menu away)
-            navContainer.classList.remove('active');
-            // Update accessibility attribute
-            hamburger.setAttribute('aria-expanded', 'false');
-        });
-    });
-
-    // Close menu when clicking anywhere outside the menu
-    document.addEventListener('click', function(event) {
-        // Check if the click was inside the menu or the hamburger
-        const isClickInside = navContainer.contains(event.target) || hamburger.contains(event.target);
-
-        // If click was outside AND the menu is open, close it
-        if (!isClickInside && navContainer.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navContainer.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-        }
-    });
 
     // Add click event listeners to tab buttons
     tabButtons.forEach(button => {
@@ -271,7 +459,9 @@ document.addEventListener('DOMContentLoaded', function() {
     appointmentButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            JFL_201747138890158.open();
+            if (typeof JFL_201747138890158 !== 'undefined') {
+                JFL_201747138890158.open();
+            }
         });
     });
     
@@ -280,7 +470,9 @@ document.addEventListener('DOMContentLoaded', function() {
     paymentButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            JFL_202316251833144.open();
+            if (typeof JFL_202316251833144 !== 'undefined') {
+                JFL_202316251833144.open();
+            }
         });
     });
     
@@ -289,7 +481,9 @@ document.addEventListener('DOMContentLoaded', function() {
     newPatientButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            JFL_201746998764070.open();
+            if (typeof JFL_201746998764070 !== 'undefined') {
+                JFL_201746998764070.open();
+            }
         });
     });
     
@@ -299,64 +493,29 @@ document.addEventListener('DOMContentLoaded', function() {
         // First circular button - Appointment Request
         circularButtons[0].addEventListener('click', function(e) {
             e.preventDefault();
-            JFL_201747138890158.open();
+            if (typeof JFL_201747138890158 !== 'undefined') {
+                JFL_201747138890158.open();
+            }
         });
         
         // Second circular button - Payment
         circularButtons[1].addEventListener('click', function(e) {
             e.preventDefault();
-            JFL_202316251833144.open();
+            if (typeof JFL_202316251833144 !== 'undefined') {
+                JFL_202316251833144.open();
+            }
         });
         
         // Third circular button - New Patient Forms
         circularButtons[2].addEventListener('click', function(e) {
             e.preventDefault();
-            JFL_201746998764070.open();
+            if (typeof JFL_201746998764070 !== 'undefined') {
+                JFL_201746998764070.open();
+            }
         });
     }
 
-    // Fixed logo click functionality
-    document.addEventListener('click', function(event) {
-        // Check if the clicked element is the logo or a child of the logo
-        if (event.target.closest('.logo-img')) {
-            console.log('Logo clicked');
-            // Scroll to the top of the page with smooth behavior
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    });
-
-    // Alternative approach - directly attach the event listener
-    const logoImg = document.querySelector('.logo-img');
-    if (logoImg) {
-        console.log('Logo element found, attaching event listener');
-        logoImg.style.cursor = 'pointer';
-        
-        logoImg.addEventListener('click', function() {
-            console.log('Logo click detected');
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    } else {
-        console.error('Logo element not found - check your HTML structure');
-    }
-
-    // Try adding this at the end of your DOMContentLoaded function
-    document.querySelector('.logo-img').onclick = function(e) {
-        e.stopPropagation(); // Stop event bubbling
-        console.log('Logo clicked via direct onclick property');
-        window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-        });
-        return false; // Prevent default
-    };
-
+    // Initialize our components
     initializeCarousel();
-
+    initializeMobileMenu(); // Initialize the new left-side mobile menu
 });
-

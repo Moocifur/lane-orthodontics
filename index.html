@@ -119,32 +119,76 @@
 
             <!-- Nav Links -->
             <div class="nav-container">
-
-                <!-- Nav Links -->
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about-doctor">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#insurance-payment">Insurance</a></li>
-                    <li><a href="#location">Location</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-
-                <!-- Buttons Container -->
-                <div class="nav-buttons">
-                    <!-- Book Appointment Button -->
-                    <button class="btn btn-primary appointment-btn lightbox-201747138890158">
-                        <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
-                        Book Appointment
-                    </button>
-                    
-                    <!-- Make Payment Button - Using button element to match appointment button -->
-                    <button class="btn btn-secondary payment-btn lightbox-202316251833144">
-                        <span class="icon"><i class="fa-solid fa-credit-card"></i></span>
-                        Make Payment
+                <!-- New Header Section with Logo and Close Button -->
+                <div class="nav-header">
+                    <div class="mobile-menu-logo">
+                        <img src="images/logo-white.png" alt="Lane Orthodontics">
+                        <span class="mobile-menu-title">LANE ORTHODONTICS</span>
+                    </div>
+                    <button class="menu-close" aria-label="Close menu">
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
 
+                <!-- Nav Links with Icons -->
+                <ul class="nav-links">
+                    <li>
+                        <a href="#home">
+                            <span class="nav-link-icon"><i class="fa-solid fa-house"></i></span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about-doctor">
+                            <span class="nav-link-icon"><i class="fa-solid fa-user-doctor"></i></span>
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services">
+                            <span class="nav-link-icon"><i class="fa-solid fa-tooth"></i></span>
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#insurance-payment">
+                            <span class="nav-link-icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+                            Insurance
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#location">
+                            <span class="nav-link-icon"><i class="fa-solid fa-location-dot"></i></span>
+                            Location
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <span class="nav-link-icon"><i class="fa-solid fa-envelope"></i></span>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Divider -->
+                <div class="nav-divider"></div>
+
+                <!-- Buttons Container -->
+                <div class="nav-buttons-wrapper">
+                    <div class="nav-buttons">
+                        <!-- Book Appointment Button -->
+                        <button class="btn btn-primary appointment-btn lightbox-201747138890158">
+                            <span class="icon"><i class="fa-regular fa-calendar-days"></i></span>
+                            Book Appointment
+                        </button>
+                        
+                        <!-- Make Payment Button -->
+                        <button class="btn btn-secondary payment-btn lightbox-202316251833144">
+                            <span class="icon"><i class="fa-solid fa-credit-card"></i></span>
+                            Make Payment
+                        </button>
+                    </div>
+                </div>
             </div>
 
         </div>
