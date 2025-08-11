@@ -1475,80 +1475,87 @@ body.location-palm-desert .beach-cta-img {
 }
 
 .treatment-card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(135deg, #fff, #f9f9f9);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
+    border: 2px solid transparent;
     position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .treatment-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-color: var(--pd-primary-dark);
+    transform: translateY(-8px);
+    border-color: var(--pd-primary);
+    box-shadow: 0 15px 35px rgba(74, 96, 35, 0.15);
 }
 
 .treatment-card::before {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background-color: var(--pd-secondary);
-    clip-path: polygon(100% 0, 0 0, 100% 100%);
-    opacity: 0.8;
-    transition: all 0.3s ease;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(74, 96, 35, 0.1), transparent);
+    transition: left 0.5s ease;
 }
 
 .treatment-card:hover::before {
-    width: 50px;
-    height: 50px;
+    left: 100%;
 }
 
-.treatment-card img {
-    height: 180px;
-    width: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+/* Service Icons */
+.service-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pd-primary), var(--pd-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: white;
+    box-shadow: 0 8px 20px rgba(74, 96, 35, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
-.treatment-card:hover img {
-    transform: scale(1.05);
+.treatment-card:hover .service-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(74, 96, 35, 0.4);
 }
 
 .card-content {
-    padding: 25px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom, #fff, #f9f5ee);
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .card-content h3 {
-    color: var(--pd-primary-dark);
+    color: var(--pd-primary);
+    margin-bottom: 15px;
     font-size: 1.3rem;
-    margin-bottom: 10px;
     position: relative;
-    padding-bottom: 10px;
-}
-
-.card-content h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--pd-secondary);
+    z-index: 2;
 }
 
 .card-content p {
-    color: var(--pd-text-light);
-    line-height: 1.5;
+    color: #666;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
     margin: 0;
 }
 
@@ -2388,7 +2395,8 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
 
     .treatment-card {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        padding: 25px 15px;
     }
 
     /* Footer desktop layout */
@@ -2764,14 +2772,14 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
     .treatment-card {
         width: 100%;
         max-width: 280px;
+        padding: 25px 15px;
     }
-
-    .treatment-card img {
-        height: 160px;
-    }
-
-    .card-content {
-        padding: 20px;
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
     }
 
     .card-content h3 {
@@ -3018,6 +3026,12 @@ body.location-loma-linda [data-location-content="true"] [data-location="loma-lin
         width: 250px;
         height: 250px;
         gap: 0;
+    }
+
+    .service-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 1.6rem;
     }
 
     /* Loma Linda mobile specific */
